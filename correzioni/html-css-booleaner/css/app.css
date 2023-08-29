@@ -1,0 +1,88 @@
+/* 
+RESET RULES
+*/
+* {
+	/* margin: 0;
+	padding: 0; */
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.bg-blue {
+	background-color: #b2e6f2;
+}
+
+.bg-dark-blue {
+	background-color: #1aabe6;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+/* 
+PAGE HEADER
+*/
+
+.page-header {
+	background-color: #4da1ff;
+	background-image: url('../img/pattern.png');
+	padding-top: 30px;
+	background-size: 345px;
+}
+
+.logo {
+	width: 200px;
+}
+
+/* ARTICLE HEADER */
+
+.article__title {
+	font-size: 48px;
+}
+
+.article__author {
+	font-style: normal;
+	color: #888888;
+	font-size: 20px;
+}
+
+.article__author span {
+	color: #4da1ff;
+}
+
+.article__date {
+	color: #888888;
+	font-size: 14px;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* realted articles */
+
+.related-articles {
+	list-style: none;
+	padding: 0;
+}
+
+.article-card {
+	/* background-color: #888888; */
+	width: 200px;
+	height: 160px;
+	color: white;
+	padding: 5px;
+}
+
+.bg-monitor {
+	/* background-image: url('../img/monitor.jpg'); */
+}
+
+.bg-graph {
+	background-image: url('../img/graph.jpg');
+}
