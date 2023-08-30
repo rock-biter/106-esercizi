@@ -1,0 +1,126 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	background-color: #f6f8f9;
+}
+
+.container {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+/*
+HEADER
+*/
+
+.main-header {
+	background-color: white;
+	padding: 14px 24px;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.logo {
+	vertical-align: middle;
+	margin-bottom: 8px;
+}
+
+.main-content {
+	padding: 40px 20px;
+}
+
+/* 
+CARD
+*/
+
+.card {
+	background-color: white;
+	border-radius: 4px;
+}
+
+.card__header,
+.card__body {
+	padding-inline: 48px;
+}
+
+.card__header {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #f6f8f9;
+}
+
+.card__body {
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+/* 
+TASK LIST
+*/
+
+.group__title {
+	font-size: 28px;
+}
+
+.group {
+	padding-bottom: 30px;
+}
+
+/* TASK */
+
+.circle {
+	display: inline-block;
+	width: 24px;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+}
+
+.task {
+	margin-bottom: 8px;
+}
+
+.task__status {
+	color: red;
+	border: 1px solid;
+	text-align: center;
+	line-height: 22px;
+	margin-right: 10px;
+}
+
+.task__status.done {
+	color: green;
+}
+
+/* TAG */
+
+.task__tag {
+	display: inline-block;
+	color: white;
+	font-size: 12px;
+	line-height: 28px;
+	border-radius: 12px;
+	padding: 0 12px;
+	background-color: #777777;
+}
+
+.bg-blue {
+	background-color: #45abea;
+}
+
+.bg-orange {
+	background-color: #f29e33;
+}
