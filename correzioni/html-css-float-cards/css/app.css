@@ -1,0 +1,117 @@
+html {
+	font-family: 'Fredoka', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+}
+
+figure img {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+	display: inline-block;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+/* LAYOUT */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.clearfix::after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.col {
+	float: left;
+	width: calc((100% - 80px) / 3);
+	margin-right: 40px;
+	margin-bottom: 50px;
+}
+
+.col:nth-child(3n) {
+	margin-right: 0;
+}
+
+.section {
+	padding: 40px 0 0;
+}
+
+.section__description {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.section__title {
+	font-size: 48px;
+	color: tomato;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.page-footer {
+	background-color: #333;
+	padding: 30px 0;
+	color: white;
+	text-align: center;
+}
+
+/* CARD */
+
+.card {
+	background-color: black;
+	color: white;
+	box-shadow: 0px 6px 12px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card__featured-image,
+.card__body {
+	float: left;
+}
+
+.card__body {
+	padding: 10px 20px;
+}
+
+.card__body > *:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.card__featured-image {
+	width: 100px;
+	height: 100px;
+}
+
+.team-member__name {
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.team-member__email {
+	color: cornflowerblue;
+}
+
+/* DEBUG */
+.debug .col {
+	/* background-color: cornflowerblue; */
+	border: 1px solid;
+	min-height: 50px;
+}
