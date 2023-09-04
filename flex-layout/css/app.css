@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+body > .page-content {
+	flex-grow: 1;
+}
+
+.page-content {
+	display: flex;
+	/* flex-wrap: wrap; */
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col-3 {
+	flex-basis: calc(100% / 4);
+}
+
+.col-4 {
+	flex-basis: calc(100% / 3);
+}
+
+.col-6 {
+	flex-basis: calc(100% / 2);
+}
+
+.col-12 {
+	flex-basis: 100%;
+}
+
+.aside {
+	flex-basis: 260px;
+	flex-shrink: 0;
+	/* flex-basis: 50px; */
+	/* transition: all 1s; */
+}
+
+/* .aside:hover {
+	flex-basis: 260px;
+} */
+
+.main-content {
+	flex-grow: 1;
+	/* flex: 0 1 auto; */
+	/* flex-basis: calc(100% - 260px); */
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* DEBUG */
+.debug .aside,
+.debug .main-content {
+	padding: 20px;
+	min-height: 600px;
+}
+
+.debug .aside {
+	background-color: tomato;
+}
+
+.debug .main-content {
+	/* background-color: cornflowerblue; */
+}
+
+.debug .page-header,
+.debug .page-footer {
+	padding: 20px;
+	background-color: chartreuse;
+	min-height: 80px;
+}
+
+.debug .container {
+	padding: 10px;
+	border: 2px solid black;
+}
+
+.debug .row {
+	padding: 10px;
+	border: 2px solid violet;
+}
+
+.debug [class^='col-'] {
+	min-height: 100px;
+	padding: 10px;
+	border: 2px solid cornflowerblue;
+	color: white;
+	font-weight: 700;
+}
