@@ -1,0 +1,312 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'DM Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+figure > img {
+	display: block;
+	width: 100%;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.5em;
+}
+
+select {
+	background-color: transparent;
+	border: none;
+	color: currentColor;
+}
+
+.section {
+	padding: 80px 0;
+}
+
+.container-fluid {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.container-sm {
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col-12 {
+	flex-basis: calc((100% / 12) * 12);
+}
+
+.col-10 {
+	flex-basis: calc((100% / 12) * 10);
+}
+
+.col-8 {
+	flex-basis: calc((100% / 12) * 8);
+}
+
+.col-4 {
+	flex-basis: calc((100% / 12) * 4);
+}
+
+.col-2 {
+	flex-basis: calc((100% / 12) * 2);
+	/* flex-basis: calc((100% * 2) / 12); */
+}
+
+.row > [class^='col'] {
+	padding: 20px;
+}
+
+.grow-1 {
+	flex-grow: 1;
+}
+
+.row-reverse {
+	flex-direction: row-reverse;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.reversed-section .row {
+	flex-direction: row-reverse;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.bg-gray {
+	background-color: #d3d3d3;
+}
+
+/* .text-image-section:nth-of-type(odd) {
+	background-color: #d3d3d3;
+}
+
+.text-image-section:nth-of-type(odd) .row {
+	flex-direction: row-reverse;
+} */
+
+/* header */
+.page-header {
+	background-color: #3161e0;
+	color: white;
+	padding: 14px 0;
+}
+
+.nav-menu {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	display: block;
+}
+
+.nav-menu__item > a {
+	display: block;
+	padding: 0 16px;
+	line-height: 32px;
+}
+
+.button {
+	display: inline-block;
+	background-color: white;
+	line-height: 50px;
+	color: black;
+	font-size: 20px;
+	padding: 0 20px;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+
+.button.button--dark {
+	background-color: black;
+	color: white;
+}
+
+.call-to-action {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+/* HERO */
+
+.hero {
+	background-image: url('../img/jumbo.png');
+	background-size: cover;
+	background-position: center;
+	color: white;
+	text-align: center;
+	padding: 100px 0;
+}
+
+.hero__description {
+	font-size: 20px;
+	line-height: 1.5em;
+	margin-bottom: 24px;
+}
+
+.title {
+	font-size: 48px;
+	line-height: 1.2em;
+	margin-bottom: 32px;
+}
+
+.section__title {
+	font-size: 48px;
+	line-height: 1.2em;
+	margin-bottom: 32px;
+}
+
+.section__content {
+	padding-top: 32px;
+}
+
+.lang-select {
+	padding: 3px 0 3px 45px;
+	display: block;
+	background-image: url('../img/ita.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-bottom: 14px;
+}
+
+/* FOOTER */
+
+.page-footer {
+	background-color: #23272a;
+	color: white;
+	padding: 70px 0;
+}
+
+.widget__title {
+	color: #7289da;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.wdget__menu {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.wdget__menu .menu__item > a {
+	display: inline-block;
+	line-height: 28px;
+}
+
+.social-link {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+}
+
+.social-link .social {
+	line-height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	text-align: center;
+	background-color: white;
+	color: black;
+}
+
+/* DEBUG */
+.debug .page-header {
+	background-color: aqua;
+	padding: 10px;
+}
+
+.debug .page-footer {
+	background-color: #23272a;
+	padding: 10px;
+}
+
+.debug .page-header [class^='col'] {
+	background-color: #daa520;
+	border: 2px dashed black;
+	padding: 20px;
+}
+
+.debug .hero {
+	background-color: #00008b;
+}
+
+.debug main section {
+	padding: 20px;
+}
+
+.debug .hero [class^='col-'] {
+	background-color: #ee82ee;
+}
+
+.debug main [class^='col-'] {
+	min-height: 200px;
+	padding: 20px;
+	border: 2px dashed black;
+}
+
+.debug footer [class^='col-'] {
+	min-height: 200px;
+	padding: 20px;
+	border: 2px dashed white;
+}
+
+.debug footer .col {
+	padding: 20px;
+	border: 2px dashed white;
+	color: white;
+}
+
+.debug main .col-8 {
+	background-color: #1e90ff;
+}
+
+.debug main .col-4 {
+	background-color: #ffc0cb;
+}
+
+.debug .cta-section .col-12 {
+	background-color: #228b22;
+	min-height: 400px;
+}
