@@ -1,0 +1,98 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'DM Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+figure > img {
+	display: block;
+	width: 100%;
+}
+
+.section {
+	padding: 80px 0;
+}
+
+.container-fluid {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.container-sm {
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col-12 {
+	flex-basis: calc((100% / 12) * 12);
+}
+
+.col-10 {
+	flex-basis: calc((100% / 12) * 10);
+}
+
+.col-8 {
+	flex-basis: calc((100% / 12) * 8);
+}
+
+.col-4 {
+	flex-basis: calc((100% / 12) * 4);
+}
+
+.col-2 {
+	flex-basis: calc((100% / 12) * 2);
+	/* flex-basis: calc((100% * 2) / 12); */
+}
+
+.row > [class^='col'] {
+	padding: 20px;
+}
+
+.card__image {
+	position: relative;
+}
+
+.heart-icon {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	/* left: 50%; */
+	display: block;
+	text-align: center;
+	font-size: 32px;
+	color: red;
+	/* opacity: 0; */
+}
+
+.card:hover .heart-icon {
+	opacity: 1;
+}
