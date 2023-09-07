@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'DM Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+figure > img {
+	display: block;
+	width: 100%;
+}
+
+.section {
+	padding: 80px 0;
+}
+
+.container-fluid {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 980px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.container-sm {
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 20px;
+	/* margin: 0 -10px; */
+}
+
+.col-12 {
+	flex-basis: calc((100% / 12) * 12);
+}
+
+.col-10 {
+	flex-basis: calc((100% / 12) * 10);
+}
+
+.col-8 {
+	flex-basis: calc((100% / 12) * 8);
+}
+
+.col-4 {
+	flex-basis: calc((100% / 12) * 4);
+}
+
+.col-2 {
+	flex-basis: calc((100% / 12) * 2);
+	/* flex-basis: calc((100% * 2) / 12); */
+}
+
+.row > [class^='col'] {
+	padding: 0 10px;
+	/* margin-bottom: 20px; */
+}
+
+.hero {
+	background-color: deeppink;
+	color: white;
+	/* min-height: 100vh; */
+}
+
+.hero .row {
+	min-height: 100vh;
+	padding: 80px 0;
+	align-items: center;
+}
+
+.hero__title {
+	font-size: 64px;
+	font-weight: 700;
+}
+
+.min-h-screen {
+	min-height: 100vh;
+}
+
+.cta {
+	display: flex;
+	align-items: center;
+	background-image: url('../img/grand-canyon.png');
+	background-size: cover;
+	background-position: center;
+}
+
+/* .cta > .container {
+	width: 100%;
+} */
+
+.section__title {
+	color: white;
+	font-size: calc(32px + 2vw);
+}
+
+.section__subtitle {
+	color: white;
+	font-size: 64px;
+}
+
+.button {
+	display: inline-block;
+	line-height: 50px;
+	border-radius: 999px;
+	background-color: black;
+	color: white;
+	padding: 0 30px;
+	font-size: 18px;
+	transition: all 0.3s;
+}
+
+.button:hover {
+	transform: scale(1.1);
+}
+
+.bg-black {
+	background-color: black;
+	color: white;
+}
+
+.centered-content {
+	position: relative;
+}
+
+.centered-content .section__title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

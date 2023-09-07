@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'DM Sans', sans-serif;
+}
+
+p {
+	max-width: 500px;
+	font-size: 20px;
+}
+
+ul {
+	list-style: none;
+}
+
+#app {
+	height: 100vh;
+	overflow: hidden;
+	background-color: wheat;
+	display: flex;
+	flex-direction: column;
+}
+
+.app__content {
+	flex-grow: 1;
+	overflow: hidden;
+	display: flex;
+}
+
+.sidebar {
+	width: 250px;
+	flex-shrink: 0;
+	background-color: #333;
+	color: white;
+	padding: 20px;
+}
+
+.content {
+	flex-grow: 1;
+	overflow: auto;
+}
+
+.app__toolbar {
+	background-color: aquamarine;
+	padding: 20px;
+}
+
+.debug .app__content,
+.debug .app__toolbar {
+	/* padding: 20px; */
+	/* border: 2px solid black; */
+}
