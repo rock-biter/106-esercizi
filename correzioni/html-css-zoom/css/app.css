@@ -28,6 +28,11 @@ figure > img {
 	display: block;
 }
 
+button {
+	background-color: transparent;
+	border: none;
+}
+
 #app {
 	height: 100vh;
 	overflow: hidden;
@@ -57,7 +62,7 @@ figure > img {
 .toolbar__item {
 	align-items: center;
 	gap: 12px;
-	padding: 12px 16px;
+	padding: 16px 16px;
 }
 
 .toolbar__item > i {
@@ -73,6 +78,16 @@ figure > img {
 	font-size: 32px;
 	display: block;
 	margin-bottom: 8px;
+}
+
+.button.button--colored .button__body > i {
+	color: greenyellow;
+}
+
+.button-end {
+	color: red;
+	background-color: rgba(255, 255, 255, 0.2);
+	padding: 0 24px;
 }
 
 /* DEBUG */
