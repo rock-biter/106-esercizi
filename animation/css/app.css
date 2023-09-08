@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section {
+	padding: 80px;
+}
+
+.red {
+	background-color: white;
+	color: black;
+	font-size: 32px;
+	padding: 10px;
+	display: inline-block;
+	position: relative;
+	/* animation: slide 4s alternate 3s ease-in-out infinite forwards; */
+	/* animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-timing-function: ease-in-out; */
+	/* top: 0; */
+	/* left: 0; */
+}
+
+.spin-icon {
+	display: inline-block;
+	padding: 6px;
+	animation: spin 1s infinite;
+	animation-play-state: paused;
+	transition: opacity 0.3s;
+	/* opacity: 0; */
+}
+
+.red:active .spin-icon {
+	/* opacity: 1; */
+	animation-play-state: running;
+}
+
+.hero {
+	min-height: 100vh;
+	display: flex;
+	/* flex-direction: column; */
+	/* justify-content: ; */
+	align-items: center;
+	background-color: chocolate;
+	animation: hue-rotate 30s infinite;
+}
+
+@keyframes hue-rotate {
+	0% {
+		filter: hue-rotate(0turn);
+	}
+	100% {
+		filter: hue-rotate(1turn);
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0) scale(1);
+		/* opacity: 0.1; */
+	}
+	to {
+		/* opacity: 1; */
+		transform: rotate(1turn) scale(1.2);
+	}
+}
+
+@keyframes slide {
+	0% {
+		left: 0%;
+		top: 0;
+	}
+	25%,
+	75% {
+		left: 100%;
+		top: 50px;
+	}
+	50% {
+		left: 50%;
+		top: 0;
+	}
+	100% {
+		top: 200px;
+		left: 100%;
+	}
+}
