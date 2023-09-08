@@ -45,6 +45,38 @@ button {
 .app__content {
 	flex-grow: 1;
 	overflow: auto;
+	padding: 80px;
+}
+
+.webcam-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/* gap: 10px; */
+}
+
+.webcam {
+	width: 200px;
+	padding: 5px;
+
+	position: relative;
+}
+
+.webcam__label {
+	position: absolute;
+	padding: 4px;
+	display: block;
+	background-color: rgba(0, 0, 0, 0.4);
+	color: white;
+	bottom: 0;
+	left: 0;
+}
+
+.webcam img {
+	display: block;
+	aspect-ratio: 16/9;
+	object-fit: cover;
+	width: 100%;
 }
 
 .app__toolbar {
