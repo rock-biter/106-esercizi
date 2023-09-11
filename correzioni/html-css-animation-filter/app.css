@@ -1,0 +1,139 @@
+/* EX 10 */
+
+.ex-10-icon {
+	animation: spin 2s linear infinite;
+	/* transform-origin: 200% 100%; */
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(-1turn);
+	}
+}
+
+/* ex 11 */
+.ex-11-icon:hover {
+	animation: spin-back 2s linear;
+}
+
+@keyframes spin-back {
+	0% {
+		transform: rotate(0);
+	}
+	80% {
+		transform: rotate(0.9turn);
+	}
+	100% {
+		transform: rotate(0);
+	}
+}
+
+/* EX 12 */
+/* .ex-12-button > div {
+	border: 1px solid red;
+} */
+
+.ex-12-button:hover .ex-12-top-white {
+	animation: slide-top-12 1s linear alternate 2;
+}
+
+.ex-12-bottom-white {
+	left: 60%;
+	right: unset;
+}
+
+.ex-12-button:hover .ex-12-bottom-white {
+	animation: slide-top-12 1s linear alternate-reverse 2;
+}
+
+@keyframes slide-top-12 {
+	0% {
+		left: 10%;
+	}
+	100% {
+		left: 60%;
+	}
+}
+
+@keyframes slide-bottom-12 {
+	0% {
+		right: 20%;
+	}
+	100% {
+		right: 60%;
+	}
+}
+
+/* EX 13 */
+.ex-13-button > div {
+	border: 1px solid red;
+}
+
+.ex-13-bottom-white {
+	right: 10%;
+}
+
+.ex-13-button:hover .ex-13-top-white {
+	animation: move-around-top 5s linear;
+}
+
+.ex-13-button:hover .ex-13-bottom-white {
+	animation: move-around-bottom 5s linear;
+}
+
+@keyframes move-around-top {
+	0% {
+		top: -10px;
+		left: 10%;
+	}
+	37% {
+		top: -10px;
+		left: 80%;
+	}
+	45% {
+		top: 50px;
+		left: 80%;
+	}
+	85% {
+		top: 50px;
+		left: -10%;
+	}
+	94% {
+		top: -10px;
+		left: -10%;
+	}
+	100% {
+		top: -10px;
+		left: 10%;
+	}
+}
+
+@keyframes move-around-bottom {
+	0% {
+		bottom: -10px;
+		right: 10%;
+	}
+	37% {
+		bottom: -10px;
+		right: 80%;
+	}
+	45% {
+		bottom: 50px;
+		right: 80%;
+	}
+	85% {
+		bottom: 50px;
+		right: -10%;
+	}
+	94% {
+		bottom: -10px;
+		right: -10%;
+	}
+	100% {
+		bottom: -10px;
+		right: 10%;
+	}
+}
