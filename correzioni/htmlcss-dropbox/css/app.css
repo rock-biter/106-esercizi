@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+/* .after::after {
+	content: '';
+} */
+
 :root {
 	--blue: #0061ff;
 	--light-blue: #b4d0e7;
@@ -45,12 +49,12 @@ figure > img {
 /* LAYOUT */
 
 .container {
-	max-width: 1000px;
+	max-width: 1050px;
 	margin: 0 auto;
 }
 
 .container-lg {
-	max-width: 1200px;
+	max-width: 1250px;
 	margin: 0 auto;
 }
 
@@ -123,6 +127,8 @@ figure > img {
 	line-height: 44px;
 	font-size: 18px;
 	padding: 0 16px;
+	text-align: center;
+	white-space: nowrap;
 }
 
 /* .button.button--sm {
@@ -148,6 +154,11 @@ figure > img {
 	/* margin-bottom: 32px; */
 }
 
+.title-lg {
+	font-size: 40px;
+	line-height: 1.3em;
+}
+
 .hero__content {
 	display: flex;
 	flex-direction: column;
@@ -157,6 +168,130 @@ figure > img {
 
 .hero__content > i {
 	font-size: 42px;
+}
+
+/* PLANS */
+.plans {
+	padding: 80px 0;
+}
+
+.plans .container + .container {
+	margin-top: 40px;
+}
+
+.plans .row + .row {
+	margin-top: 24px;
+}
+
+.bill-rate__selection {
+	display: flex;
+	gap: 32px;
+}
+
+.bill-rate__group {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.bill-rate__group > input {
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	background-color: transparent;
+	appearance: none;
+	margin-bottom: 2px;
+}
+
+.bill-rate__group > input:checked {
+	border: 5px solid var(--blue);
+}
+
+/* plan card */
+.plans-list {
+	row-gap: 50px;
+}
+
+[class^='col'] > .card {
+	height: 100%;
+}
+
+.card-plan {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.card-plan .card__header {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.card-plan .card__header,
+.card-plan .card__body {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.card-plan .card__header {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	/* align-items: baseline; */
+}
+
+.card-plan .card__body {
+	padding-top: 36px;
+	padding-bottom: 36px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.card-plan.card-plan--landscape .row {
+	flex-wrap: nowrap;
+	gap: 50px;
+}
+
+.row.no-gutter [class^='col'] {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* features */
+.features {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	font-size: 14px;
+}
+
+.features__item {
+	display: flex;
+	gap: 10px;
+	align-items: baseline;
+}
+
+.features.blue-icons i {
+	color: var(--blue);
+}
+
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+.card-plan__cta::after {
+	content: '';
+	display: block;
+	width: 48px;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.card-plan__cta {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
 }
 
 /* debug */
