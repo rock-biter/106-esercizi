@@ -46,7 +46,35 @@ figure > img {
 	width: 100%;
 }
 
+.bg-green {
+	background-color: var(--green);
+}
+
+.bg-red {
+	background-color: var(--red);
+}
+
+.bg-bordeaux {
+	background-color: var(--bordeaux);
+}
+
+.bg-light-blue {
+	background-color: var(--light-blue);
+}
+
+.bg-dark-blue {
+	background-color: var(--dark-blue);
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
 /* LAYOUT */
+
+.section {
+	padding: 80px 0;
+}
 
 .container {
 	max-width: 1050px;
@@ -124,11 +152,23 @@ figure > img {
 	background-color: var(--blue);
 	color: white;
 	display: inline-block;
-	line-height: 44px;
+	line-height: 42px;
+	border: 1px solid var(--blue);
 	font-size: 18px;
 	padding: 0 16px;
 	text-align: center;
 	white-space: nowrap;
+}
+
+.button.button--light {
+	color: var(--dark);
+	background-color: var(--light);
+	border-color: var(--light);
+}
+
+.button.button--outlined {
+	background-color: transparent;
+	border-color: currentColor;
 }
 
 /* .button.button--sm {
@@ -145,6 +185,10 @@ figure > img {
 
 .hero .row + .row {
 	margin-top: 32px;
+}
+
+.hero__featured-image {
+	margin-bottom: -80px;
 }
 
 .title-dispaly {
@@ -168,11 +212,12 @@ figure > img {
 
 .hero__content > i {
 	font-size: 42px;
+	margin: auto 0 20px;
 }
 
 /* PLANS */
 .plans {
-	padding: 80px 0;
+	padding: 140px 0 80px;
 }
 
 .plans .container + .container {
@@ -294,6 +339,56 @@ figure > img {
 	gap: 32px;
 }
 
+/* PARTNER */
+.carousel__details {
+	background-color: var(--light-gray);
+	padding: 30px 40px;
+	height: 100%;
+}
+
+.detail__logo {
+	max-width: 200px;
+}
+
+.detail__logo::after {
+	content: '';
+	display: block;
+	width: 100px;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.2);
+	margin: 40px 0;
+}
+
+.carousel__details blockquote {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.card-logo {
+	aspect-ratio: 1/1;
+	/* background-color: var(--light-blue); */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-logo img {
+	width: 50%;
+	filter: invert(1);
+}
+
+/* footer */
+.page-footer {
+	background-color: var(--dark);
+	color: var(--light);
+}
+
+/* .page-footer .col {
+	flex-grow: 1;
+	flex-basis: 0;
+} */
+
 /* debug */
 .debug + * .row > [class^='col'] {
 	border: 2px solid cornflowerblue;
@@ -311,3 +406,7 @@ figure > img {
 	border: 2px solid tomato;
 	padding: 10px;
 }
+
+/* .row > [class^='col'] {
+	border: 2px solid tomato;
+} */
