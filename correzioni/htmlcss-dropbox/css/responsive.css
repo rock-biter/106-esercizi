@@ -1,0 +1,41 @@
+@media (max-width: 1199px) {
+	.nav-menu__item {
+		display: none;
+	}
+
+	.nav-menu:first-child > :first-child {
+		display: block;
+	}
+
+	.title-dispaly {
+		font-size: 64px;
+	}
+}
+
+@media (max-width: 980px) {
+	.title-dispaly {
+		font-size: 48px;
+	}
+
+	.operations .col-4 {
+		width: 50%;
+	}
+
+	.partner [class^='col'] {
+		width: 100%;
+	}
+
+	.partner .row :last-child {
+		order: -1;
+	}
+}
+
+@media (max-width: 768px) {
+	.title-dispaly {
+		font-size: 32px;
+	}
+
+	.operations .col-4 {
+		width: 100%;
+	}
+}
