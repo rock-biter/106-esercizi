@@ -1,0 +1,26 @@
+@media (max-width: 1160px) {
+	.container {
+		width: 100%;
+	}
+}
+
+@media (max-width: 575px) {
+	.row {
+		flex-wrap: wrap;
+		gap: 4.5rem;
+	}
+
+	.row > .col {
+		width: 100%;
+	}
+
+	.steps {
+		margin-bottom: 0;
+	}
+
+	.why-us {
+		background-color: black;
+		padding: 3rem 0;
+		margin-bottom: 0;
+	}
+}
