@@ -130,11 +130,7 @@ a {
 	height: 100%;
 }
 
-.card::before {
-	font-family: 'Font Awesome 6 Free';
-	font-weight: 900;
-	content: '\f10d';
-}
+
 
 .card-feature.card--landscape {
 	display: flex;
