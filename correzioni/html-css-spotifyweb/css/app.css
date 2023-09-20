@@ -1,0 +1,219 @@
+:root {
+	--green: #adff2f;
+	--sidebar-width: 230px;
+	--progress: 25%;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* utilities */
+.flex {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.grow-1 {
+	flex-grow: 1;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.items-center {
+	align-items: center;
+}
+
+/* APP */
+#app {
+	height: 100vh;
+	color: white;
+}
+
+#app,
+.app__content,
+.app__toolbar,
+.app__sidebar,
+.app__main-content {
+	overflow: hidden;
+}
+
+.app__toolbar {
+	background-color: #282828;
+	min-height: 90px;
+}
+
+.app__main-content {
+	background-color: #141922;
+}
+
+.app__sidebar {
+	width: 50px;
+	background-color: black;
+	/* flex-shrink: 0; */
+}
+
+/* app toolbar */
+.track-player {
+	width: 50%;
+}
+
+.album-preview,
+.track-controls {
+	flex-basis: var(--sidebar-width);
+}
+
+.album-preview {
+	padding: 0 10px;
+	gap: 20px;
+}
+
+.album,
+.album-controls {
+	gap: 10px;
+}
+
+.album-controls {
+	flex-wrap: wrap;
+}
+
+.album__cover {
+	width: 28px;
+	aspect-ratio: 1;
+}
+
+.track-player .controls {
+	gap: 20px;
+	font-size: 22px;
+}
+
+.controls .control-icon.control--play {
+	font-size: 30px;
+	margin: 0 10px;
+}
+
+.progress-bar {
+	background-color: rgba(255, 255, 255, 0.3);
+	border-radius: 999px;
+	position: relative;
+}
+
+.progress {
+	height: 6px;
+	border-radius: 999px;
+	width: var(--progress);
+	background-color: rgb(179, 179, 179);
+}
+
+.track-timeline {
+	gap: 14px;
+}
+
+.progress-handler {
+	width: 16px;
+	height: 16px;
+	background-color: white;
+	border-radius: 999px;
+	position: absolute;
+	left: var(--progress);
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+
+.progress-bar:hover .progress-handler {
+	display: block;
+}
+
+.progress-bar:hover .progress {
+	background-color: var(--green);
+}
+
+.track-controls {
+	gap: 16px;
+	padding: 0px 10px;
+	font-size: 18px;
+}
+
+/* media query */
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.app__sidebar {
+		width: var(--sidebar-width);
+	}
+
+	.album__cover {
+		width: 42px;
+	}
+
+	.track-timeline {
+		gap: 24px;
+	}
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
+
+/* DEBUG */
+.debug #app {
+	background-color: aquamarine;
+}
+
+.debug .app__content > * {
+	border: 2px solid black;
+	padding: 20px;
+}
+
+/* .debug .app__toolbar > * {
+	border: 2px solid yellow;
+	padding: 10px 20px;
+} */
+
+.debug .track-player > * {
+	/* border: 2px solid cornflowerblue; */
+	/* padding: 10px 20px; */
+}

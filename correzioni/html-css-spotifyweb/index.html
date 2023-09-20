@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./css/app.css" />
+	</head>
+	<body class="debug">
+		<div id="app" class="flex flex-column">
+			<div class="app__content grow-1 flex">
+				<header class="app__sidebar">sidebar</header>
+				<main class="app__main-content grow-1">contenuto</main>
+			</div>
+			<aside class="app__toolbar flex items-center justify-between">
+				<div class="album-preview flex items-center">
+					<div class="album flex grow-1 items-center">
+						<img class="album__cover" src="./img/sinister.jpeg" alt="" />
+
+						<div>
+							<h4 class="album__author">Sinister</h4>
+							<p class="album__track-name">Brano nome</p>
+						</div>
+					</div>
+					<ul class="album-controls flex">
+						<li class="control-icon">
+							<i class="fa-regular fa-heart"></i>
+						</li>
+						<li class="control-icon">
+							<i class="fa-regular fa-folder"></i>
+						</li>
+					</ul>
+				</div>
+				<div class="track-player">
+					<ul class="controls flex items-center justify-center">
+						<li class="control-icon control--shuffle">
+							<i class="fa-solid fa-shuffle"></i>
+						</li>
+						<li class="control-icon control--backward">
+							<i class="fa-solid fa-backward-step"></i>
+						</li>
+						<li class="control-icon control--play">
+							<i class="fa-regular fa-circle-play"></i>
+						</li>
+						<li class="control-icon control--forward">
+							<i class="fa-solid fa-forward-step"></i>
+						</li>
+						<li class="control-icon control--rewind">
+							<i class="fa-solid fa-rotate-right"></i>
+						</li>
+					</ul>
+					<div class="track-timeline flex items-center">
+						<div class="time time--current">0:25</div>
+						<div class="progress-bar grow-1">
+							<div class="progress"></div>
+							<div class="progress-handler"></div>
+						</div>
+						<div class="time time-total">4:35</div>
+					</div>
+				</div>
+				<ul class="track-controls flex items-center">
+					<li class="control-icon">
+						<i class="fa-solid fa-rotate-right"></i>
+					</li>
+					<li class="control-icon">
+						<i class="fa-solid fa-rotate-right"></i>
+					</li>
+					<li class="control-icon">
+						<i class="fa-solid fa-rotate-right"></i>
+					</li>
+					<li class="progress-bar grow-1">
+						<div class="progress"></div>
+						<div class="progress-handler"></div>
+					</li>
+				</ul>
+			</aside>
+		</div>
+	</body>
+</html>
