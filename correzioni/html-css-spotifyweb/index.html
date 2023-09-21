@@ -22,7 +22,80 @@
 	<body class="debug">
 		<div id="app" class="flex flex-column">
 			<div class="app__content grow-1 flex">
-				<header class="app__sidebar">sidebar</header>
+				<header class="app__sidebar flex flex-column">
+					<div class="logo-wrapper">
+						<div class="responsive__item">
+							<div class="item__icon">
+								<img class="logo-lg" src="./img/logo.svg" alt="" />
+								<img class="logo-sm" src="./img/logo-small.svg" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<nav class="nav">
+						<ul class="nav__menu">
+							<li class="menu__item active">
+								<!-- <div class="border-left"></div> -->
+								<a href="#" class="responsive__item">
+									<span class="item__icon">
+										<img src="./img/home.svg" alt="" />
+									</span>
+									<span class="item__text">Home</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="responsive__item">
+									<span class="item__icon">
+										<img src="./img/search.svg" alt="" />
+									</span>
+									<span class="item__text">Cerca</span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="responsive__item">
+									<span class="item__icon">
+										<img src="./img/libreria.svg" alt="" />
+									</span>
+									<span class="item__text">La tua Libreria</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div class="playlist-widget flex flex-column">
+						<h3 class="widget__title">Playlist</h3>
+						<a href="#" class="responsive__item add-playlist-cta">
+							<span class="item__icon">
+								<i class="fa-solid fa-plus"></i>
+							</span>
+							<span class="item__text"> Crea playlist </span>
+						</a>
+
+						<ul class="library">
+							<li class="playlist"><a href="#">playlist</a></li>
+							<li class="playlist"><a href="#">playlist</a></li>
+							<li class="playlist"><a href="#">playlist</a></li>
+							<li class="playlist"><a href="#">playlist</a></li>
+							<li class="playlist"><a href="#">playlist</a></li>
+							<li class="playlist"><a href="#">playlist</a></li>
+						</ul>
+					</div>
+
+					<div class="user-profile">
+						<a href="#" class="responsive__item download">
+							<span class="item__icon">
+								<img src="./img/download.svg" alt="" width="30" />
+							</span>
+							<span class="item__text">Installa app</span>
+						</a>
+						<a href="#" class="responsive__item user">
+							<span class="item__icon">
+								<img src="./img/profile.svg" alt="" width="30" />
+							</span>
+							<span class="item__text">John Doe</span>
+						</a>
+					</div>
+				</header>
 				<main class="app__main-content grow-1">contenuto</main>
 			</div>
 			<aside class="app__toolbar flex items-center justify-between">

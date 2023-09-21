@@ -2,6 +2,7 @@
 	--green: #adff2f;
 	--sidebar-width: 230px;
 	--progress: 25%;
+	--sidebar-pl: 20px;
 }
 
 html {
@@ -63,7 +64,6 @@ img {
 #app,
 .app__content,
 .app__toolbar,
-.app__sidebar,
 .app__main-content {
 	overflow: hidden;
 }
@@ -165,6 +165,112 @@ img {
 	font-size: 18px;
 }
 
+/* sidebar */
+
+.playlist-widget {
+	display: none;
+}
+
+.user-profile {
+	margin-top: auto;
+}
+
+.logo-wrapper {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.logo-lg {
+	display: none;
+	height: 40px;
+}
+
+.logo-sm {
+	width: 28px;
+	height: 28px;
+	display: block;
+	margin: 0 auto;
+}
+
+.menu__item img {
+	height: 28px;
+}
+
+.nav {
+	margin-bottom: 35px;
+	margin-top: 5px;
+}
+
+.nav .menu__item .responsive__item {
+	height: 35px;
+}
+
+.nav .menu__item {
+	position: relative;
+}
+
+.nav .menu__item.active::before {
+	content: '';
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 2px;
+	background-color: var(--green);
+	top: 0;
+	left: 0;
+}
+
+/* .nav .menu__item {
+	border-left: 2px solid transparent;
+}
+
+.nav .menu__item.active {
+	border-color: var(--green);
+} */
+
+.responsive__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 20px;
+}
+
+.responsive__item .item__text {
+	display: none;
+}
+
+.playlist-widget {
+	gap: 16px;
+}
+
+.widget__title,
+.library {
+	padding-left: var(--sidebar-pl);
+	padding-right: var(--sidebar-pl);
+}
+
+.widget__title {
+	text-transform: uppercase;
+}
+
+.add-playlist-cta .item__icon {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	background-color: white;
+	color: black;
+}
+
+.library .playlist > * {
+	line-height: 35px;
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+}
+
 /* media query */
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -184,6 +290,44 @@ img {
 	.track-timeline {
 		gap: 24px;
 	}
+
+	.playlist-widget {
+		display: flex;
+	}
+
+	.logo-lg {
+		display: block;
+	}
+
+	.logo-sm {
+		display: none;
+	}
+
+	.responsive__item .item__text {
+		display: block;
+	}
+
+	.responsive__item {
+		justify-content: flex-start;
+		padding-left: var(--sidebar-pl, 20px);
+		padding-right: var(--sidebar-pl, 20px);
+	}
+
+	.logo-wrapper {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.user-profile .download {
+		flex-wrap: wrap;
+	}
+	.user-profile .download::after {
+		content: '';
+		height: 2px;
+		width: 100%;
+		background-color: white;
+		margin: 10px 0;
+	}
 }
 
 /* // Large devices (desktops, 992px and up) */
@@ -202,11 +346,11 @@ img {
 .debug #app {
 	background-color: aquamarine;
 }
-
+/* 
 .debug .app__content > * {
 	border: 2px solid black;
 	padding: 20px;
-}
+} */
 
 /* .debug .app__toolbar > * {
 	border: 2px solid yellow;
@@ -217,3 +361,16 @@ img {
 	/* border: 2px solid cornflowerblue; */
 	/* padding: 10px 20px; */
 }
+
+.debug .app__sidebar > * {
+	/* border: 2px solid yellow; */
+	/* padding: 20px; */
+}
+
+/* .debug .responsive__item {
+	border: 1px solid orange;
+}
+
+.debug .responsive__item > * {
+	border: 1px solid orange;
+} */
