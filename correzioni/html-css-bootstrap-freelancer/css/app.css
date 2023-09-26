@@ -1,0 +1,29 @@
+/* my style */
+.page-header {
+	background-color: #2c3e50;
+	color: white;
+}
+
+.hero,
+.about {
+	color: white;
+	background-color: #1abc9c;
+}
+
+.page-footer {
+	color: white;
+}
+
+.page-footer > :first-child {
+	background-color: #3a546d;
+}
+
+.page-footer > :last-child {
+	background-color: #2c3e50;
+}
+
+/* debug */
+.debug .row > * {
+	border: 2px solid currentColor;
+	min-height: 50px;
+}
