@@ -1,11 +1,15 @@
-.container,
+/* .container,
 .container-xl {
 	border: 1px solid black;
-}
-
+} */
+/* 
 .card {
 	background-color: aquamarine;
 	padding: 20px;
 	min-height: 50px;
 	border-radius: 20px;
+} */
+
+.card_concert .card-body {
+	padding: 40px;
 }

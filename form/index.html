@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<!-- <link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/> -->
+		<link rel="stylesheet" href="./css/app.css" />
+	</head>
+	<body>
+		<main>
+			<section>
+				<form action="./about.html" method="GET">
+					<input placeholder="Name" name="name" type="text" required />
+					<input
+						placeholder="Age"
+						name="age"
+						type="number"
+						step="2"
+						min="2"
+						max="99"
+					/>
+					<input name="eye-color" type="color" />
+					<ul>
+						<li>
+							<input type="checkbox" value="pc" name="device" id="" />
+							<label for="">Pc</label>
+						</li>
+						<li>
+							<input type="checkbox" value="tablet" name="device" id="" />
+							<label for="">Table</label>
+						</li>
+						<li>
+							<input type="checkbox" value="smartphone" name="device" id="" />
+							<label for="">Smartphone</label>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<input type="radio" value="pc" name="responsive" id="" />
+							<label for="">Pc</label>
+						</li>
+						<li>
+							<input type="radio" value="tablet" name="responsive" id="" />
+							<label for="">Table</label>
+						</li>
+						<li>
+							<input type="radio" value="smartphone" name="responsive" id="" />
+							<label for="">Smartphone</label>
+						</li>
+					</ul>
+					<input name="" checked type="checkbox" />
+					<input checked type="radio" />
+					<input
+						readonly
+						value="gian@gian.gian"
+						type="email"
+						placeholder="email"
+					/>
+					<input name="birth-date" type="date" />
+					<input name="cv" type="file" />
+					<input type="month" />
+					<input name="password" type="password" />
+					<input name="budget" type="range" min="1000" max="10000" />
+					<input type="time" />
+
+					<p>
+						<select name="gender">
+							<option value="male">Uomo</option>
+							<option selected value="female">Donna</option>
+							<option value="">Altro</option>
+							<option value="">Non te lo dico</option>
+						</select>
+					</p>
+					<textarea name="" cols="30" rows="2"></textarea>
+					<input type="submit" value="clicca qui" />
+					<input type="reset" value="svuota form" />
+					<!-- <button>clicca qui</button> -->
+				</form>
+			</section>
+		</main>
+	</body>
+</html>
