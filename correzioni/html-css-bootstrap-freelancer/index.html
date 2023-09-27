@@ -25,15 +25,15 @@
 		/>
 		<link rel="stylesheet" href="./css/app.css" />
 	</head>
-	<body class="debug">
+	<body class="">
 		<header class="page-header py-4">
 			<nav class="container">
 				<div class="row justify-content-between align-items-center">
 					<div class="col-auto">
-						<span class="h3 text-uppercase"> Start Bootstrap </span>
+						<span class="logo text-uppercase"> Start Bootstrap </span>
 					</div>
 					<div class="col-auto">
-						<ul class="d-flex list-unstyled gap-4 mb-0">
+						<ul class="d-none d-md-flex list-unstyled gap-4 mb-0">
 							<li>
 								<a class="d-block text-decoration-none text-light" href=""
 									>link</a
@@ -50,6 +50,9 @@
 								>
 							</li>
 						</ul>
+						<div class="hamburger d-md-none">
+							<i class="fa-solid fa-bars"></i>
+						</div>
 					</div>
 				</div>
 			</nav>
@@ -60,7 +63,26 @@
 			<section class="hero py-5">
 				<div class="container">
 					<div class="row justify-content-center">
-						<div class="col-12 text-center">immagine...</div>
+						<div class="col-12 text-center">
+							<img
+								class="avatar img-fluid mb-3"
+								src="./img/avatar.svg"
+								alt=""
+							/>
+							<h1 class="text-uppercase display-3 fw-bold">Start bootstrap</h1>
+							<div
+								class="divider my-4 d-flex justify-content-center gap-4 align-items-center"
+							>
+								<i class="fa-solid fa-star"></i>
+							</div>
+							<ul
+								class="tags text-uppercase d-flex gap-3 list-unstyled justify-content-center fs-5"
+							>
+								<li class="tag">Graphic artist</li>
+								<li class="tag">Web designer</li>
+								<li class="tag">Illustrator</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -68,16 +90,48 @@
 			<section class="portfolio py-5">
 				<div class="container text-center mb-3">
 					<h2>Portfolio</h2>
-					<p>divisore</p>
+					<div
+						class="divider my-4 d-flex justify-content-center gap-4 align-items-center"
+					>
+						<i class="fa-solid fa-star"></i>
+					</div>
 				</div>
 				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-lg-4">card</div>
-						<div class="col-md-6 col-lg-4">card</div>
-						<div class="col-md-6 col-lg-4">card</div>
-						<div class="col-md-6 col-lg-4">card</div>
-						<div class="col-md-6 col-lg-4">card</div>
-						<div class="col-md-6 col-lg-4">card</div>
+					<div class="row gy-4">
+						<div class="col-md-6 col-lg-4">
+							<div>
+								<img class="rounded img-fluid" src="./img/cabin.png" alt="" />
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div>
+								<img class="rounded img-fluid" src="./img/cake.png" alt="" />
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div>
+								<img class="rounded img-fluid" src="./img/circus.png" alt="" />
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div>
+								<img class="rounded img-fluid" src="./img/game.png" alt="" />
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div>
+								<img class="rounded img-fluid" src="./img/safe.png" alt="" />
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4">
+							<div>
+								<img
+									class="rounded img-fluid"
+									src="./img/submarine.png"
+									alt=""
+								/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -85,16 +139,46 @@
 			<section class="about py-5">
 				<div class="container text-center mb-3">
 					<h2>About</h2>
-					<p>divisore</p>
+					<div
+						class="divider my-4 d-flex justify-content-center gap-4 align-items-center"
+					>
+						<i class="fa-solid fa-star"></i>
+					</div>
 				</div>
 				<div class="container">
-					<div class="row justify-content-center">
-						<div class="col-10 col-md-5">testo</div>
-						<div class="col-10 col-md-5">testo</div>
+					<div class="row justify-content-center mb-3">
+						<div class="col-10">
+							<p class="column-text">
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+								sint iusto, accusantium exercitationem perferendis neque ad
+								tenetur, repellendus voluptatem enim, quasi dignissimos! Dolore
+								dolor temporibus earum quam sed corrupti officiis praesentium,
+								et atque commodi. Numquam inventore repellat ea accusamus
+								aperiam.
+							</p>
+						</div>
+
+						<!-- <div class="col-10 col-md-5">
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Cupiditate dolorem accusantium harum veritatis expedita
+								obcaecati facere et fuga saepe? Ratione?
+							</p>
+						</div>
+						<div class="col-10 col-md-5">
+							<p>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Cupiditate dolorem accusantium harum veritatis expedita
+								obcaecati facere et fuga saepe? Ratione?
+							</p>
+						</div> -->
 					</div>
 				</div>
 				<div class="container text-center">
-					<a class="btn" href="">clicca qui</a>
+					<a class="btn btn-outline-light" href="">
+						<i class="fa-solid fa-download me-1"></i>
+						clicca qui</a
+					>
 				</div>
 			</section>
 
@@ -102,12 +186,43 @@
 				<div class="container">
 					<div class="container text-center mb-3">
 						<h2>Contact me</h2>
-						<p>divisore</p>
+						<div
+							class="divider my-4 d-flex justify-content-center gap-4 align-items-center"
+						>
+							<i class="fa-solid fa-star"></i>
+						</div>
 					</div>
 				</div>
 				<div class="container">
 					<div class="row justify-content-center">
-						<div class="col-10">form</div>
+						<div class="col-10">
+							<form action="" class="custom-form" method="POST">
+								<p>
+									<input type="text" name="name" placeholder="Name" />
+								</p>
+								<p>
+									<input
+										type="email"
+										name="email"
+										placeholder="Email address"
+									/>
+								</p>
+								<p>
+									<input type="text" name="emil" placeholder="Phone number" />
+								</p>
+								<p>
+									<textarea
+										name="message"
+										placeholder="Message"
+										cols="30"
+										rows="6"
+									></textarea>
+								</p>
+								<p>
+									<button class="btn btn-lg btn-green">Send</button>
+								</p>
+							</form>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -116,9 +231,54 @@
 			<section class="py-5">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4">footer</div>
-						<div class="col-md-4">footer</div>
-						<div class="col-md-4">footer</div>
+						<div class="col-md-4">
+							<h4 class="fs-5 text-uppercase">Titolo footer</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+						</div>
+						<div class="col-md-4">
+							<h4 class="fs-5 text-uppercase">Titolo footer</h4>
+							<ul class="d-flex gap-3 list-unstyled justify-content-center">
+								<li class="social-link">
+									<a
+										href="#"
+										class="border border-light rounded-circle text-light"
+									>
+										<i class="fa-brands fa-facebook-f"></i>
+									</a>
+								</li>
+								<li class="social-link">
+									<a
+										href="#"
+										class="border border-light rounded-circle text-light"
+									>
+										<i class="fa-brands fa-google-plus-g"></i>
+									</a>
+								</li>
+								<li class="social-link">
+									<a
+										href="#"
+										class="border border-light rounded-circle text-light"
+									>
+										<i class="fa-brands fa-x-twitter"></i>
+									</a>
+								</li>
+								<li class="social-link">
+									<a
+										href="#"
+										class="border border-light rounded-circle text-light"
+									>
+										<i class="fa-brands fa-linkedin-in"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<h4 class="fs-5 text-uppercase">Titolo footer</h4>
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+								alias.
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
