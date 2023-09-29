@@ -1,0 +1,92 @@
+/* my style */
+:root {
+	--sidebar-width: 68px;
+}
+
+.app {
+	background-color: #f8f9fa;
+}
+
+.top-bar {
+	/* min-height: 70px; */
+	padding: 14px 0;
+}
+
+.logo-wrapper {
+	padding: 11px 0;
+}
+
+.logo {
+	height: 28px;
+}
+
+.logo-mobile {
+	height: 50px;
+}
+
+.top-bar > * {
+	background-color: white;
+}
+
+.search-bar input {
+	padding-left: 50px;
+	background-color: #e5e5e5;
+}
+
+.search-bar .search-bar__icon {
+	top: 50%;
+	left: 12px;
+	transform: translateY(-50%);
+	font-size: 24px;
+	pointer-events: none;
+}
+
+.toolbar {
+	font-size: 20px;
+	color: #555;
+}
+
+.notification.unread {
+	color: #ff8f00;
+}
+
+/* .app__content-wrapper {
+	background-color: #f8f9fa;
+} */
+
+.app__sidebar {
+	width: var(--sidebar-width);
+	background-color: #051e34;
+	color: white;
+	padding: 20px 0;
+	background-image: url('../img/sidebar-bg.png');
+	background-size: auto 100%;
+}
+
+.sidebar__nav-item .item__icon {
+	flex-basis: 26px;
+	text-align: center;
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.app__sidebar {
+		--sidebar-width: 150px;
+	}
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
