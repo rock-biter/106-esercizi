@@ -3,6 +3,10 @@
 	--sidebar-width: 68px;
 }
 
+.offcanvas-w-lg {
+	--bs-offcanvas-width: 600px;
+}
+
 .app {
 	background-color: #f8f9fa;
 }
@@ -48,6 +52,16 @@
 
 .notification.unread {
 	color: #ff8f00;
+}
+
+.dropdown-toggle.notification::after {
+	display: none;
+}
+
+.table tr > * {
+	padding-left: 24px;
+	padding-right: 24px;
+	white-space: nowrap;
 }
 
 /* .app__content-wrapper {
