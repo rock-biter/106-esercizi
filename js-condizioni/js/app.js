@@ -104,6 +104,7 @@ let age = 32
 
 if (age > 50) {
 	let messaggio = 'Sei maturo'
+	let nome = 'Maria'
 	console.log(nome, age)
 } else {
 	let messaggio = 'Benvenuta giovinezza'
@@ -112,6 +113,10 @@ if (age > 50) {
 	if (age % 2 === 0) {
 		console.log(messaggio)
 	}
+}
+
+{
+	let nome = 'Mamma'
 }
 
 // qui ci da errore
