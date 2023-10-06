@@ -14,6 +14,7 @@ const priceDOMElement = document.getElementById('price')
 
 document.getElementById('btn-reset').addEventListener('click', function () {
 	distanceDOMElement.value = ''
+	console.log('reset')
 })
 
 btnDOMElement.addEventListener('click', function () {
