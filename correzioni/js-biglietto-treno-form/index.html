@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Biglietto treno con form</title>
+	</head>
+	<body>
+		<div>
+			<p>
+				<label for="distance">Inserire il n di km da percorrere:</label>
+				<input type="text" name="distance" id="distance" placeholder="Km" />
+			</p>
+			<p>
+				<label for="discount">Selezionare lo sconto</label>
+				<select name="discount" id="discount">
+					<option value="0">Minirenne</option>
+					<option selected value="1">Maggiorenne</option>
+					<option value="2">Over 65</option>
+				</select>
+			</p>
+			<p>
+				<button id="btn-print">Stampa biglietto</button>
+				<button id="btn-reset" type="reset">Reset</button>
+			</p>
+		</div>
+
+		<div id="price"></div>
+
+		<script src="./js/app.js"></script>
+	</body>
+</html>
