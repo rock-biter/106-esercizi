@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.grid {
+				display: grid;
+				gap: 10px;
+				grid-template-columns: repeat(10, 1fr);
+			}
+
+			.box {
+				aspect-ratio: 1;
+				padding: 16px;
+			}
+
+			.fizz,
+			.box--fizz {
+				background-color: aqua;
+			}
+
+			.buzz,
+			.box--buzz {
+				background-color: bisque;
+			}
+
+			.fizzbuzz,
+			.box--fizzbuzz {
+				background-color: cadetblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid"></div>
+		<script src="./js/app.js"></script>
+	</body>
+</html>
