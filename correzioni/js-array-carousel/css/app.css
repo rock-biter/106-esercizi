@@ -19,10 +19,22 @@ section {
 
 .carousel {
 	position: relative;
+	display: flex;
+}
+
+.carousel .thumbs {
+	flex-shrink: 0;
+	flex-basis: 150px;
+}
+
+.carousel__item--thumb {
+	aspect-ratio: 21/9;
+	object-fit: cover;
 }
 
 .carousel__item {
-	width: 100%;
+	/* width: 100%; */
+	flex-grow: 1;
 	display: none;
 	aspect-ratio: 21/9;
 	object-fit: cover;
