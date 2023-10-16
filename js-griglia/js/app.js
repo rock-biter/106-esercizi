@@ -10,10 +10,13 @@ playBtnElement.addEventListener('click', function () {
 	// svuota la griglia dalle celle generate in precedenza
 	gridElement.innerHTML = ''
 
+	const bombe = getArrayOfRandomIntBetween(1, 100, 16)
+	console.log(bombe)
+
 	// generare 100 nuove caselle da inserire nella
 	for (let i = 0; i < 100; i++) {
 		const n = i + 1
-		console.log(n)
+		// console.log(n)
 
 		const htmlCell = '<div class="cell">' + n + '</div>'
 		// console.log(htmlCell)
@@ -23,7 +26,7 @@ playBtnElement.addEventListener('click', function () {
 
 	// recupero tutte le caselle create
 	const cellDomElements = document.querySelectorAll('.cell')
-	console.log(cellDomElements)
+	// console.log(cellDomElements)
 
 	// ciclando l'array con le caselle del dom
 	for (let i = 0; i < cellDomElements.length; i++) {
@@ -32,25 +35,52 @@ playBtnElement.addEventListener('click', function () {
 
 		// ad ogni casella aggiungo l'event listener
 		currentCellElement.addEventListener('click', function () {
+			console.log(currentCellElement.classList.contains('bg-green'))
+
 			currentCellElement.classList.add('bg-green')
+			// prendo il numero della casella
+
+			// - SE il numero della casella è presente nell'array di bombe
+			// - aggiungialo la classe bg-red
+			// - game over
+			// - ALTRIMENTI
+			// - incrementiamo il punteggio
+			// - aggiungo la classe bg-blue
+			// - SE utente ha vinto
+			// - stampiamo hai vinto con il punteggio
 		})
 	}
 })
 
-// qui non ci sono caselle nel DOM!!!
-const cellDomElement = document.querySelector('.cell')
-console.log(cellDomElement)
+function getArrayOfRandomIntBetween(minRange, maxRange, number) {
+	const bombsArray = []
 
-function onCellClick() {
-	console.log(this, this.innerHTML) // conicide con l'elemento del dom che ha scatenato l'evento click
-	// console.log('ho clicca sulla casella number: ' + i)
+	// popolare l'array con 16 numeri random non duplicati
+	while (bombsArray.length < number) {
+		// generare un numero random da rangeMin a rangeMAx
+		const n = getRandomIntInclusive(minRange, maxRange)
+		// console.log(n)
+		// SE n non è presente nell'array di bombe
+		console.log(bombsArray.includes(n))
+		if (bombsArray.includes(n) === false) {
+			// pushare il numero nell'array di bombe
+			bombsArray.push(n)
+		}
 
-	this.classList.add('bg-green')
+		// if(!bombsArray.includes(n)) {
+		// 	bombsArray.push(n)
+		// }
+
+		// ALTRIOMENTI
+		// non devo pushare il numero
+	}
+
+	// return array di numeri generati
+	return bombsArray
 }
 
-const titolo = document.querySelector('h1')
-const paragrafo = document.querySelector('p')
-
-titolo.addEventListener('click', onCellClick)
-
-paragrafo.addEventListener('click', onCellClick)
+function getRandomIntInclusive(min, max) {
+	min = Math.ceil(min)
+	max = Math.floor(max)
+	return Math.floor(Math.random() * (max - min + 1) + min) // The maximum is inclusive and the minimum is inclusive
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>This and Arrow Function</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			section {
+				padding: 80px 24px;
+			}
+
+			#incrementa {
+				line-height: 30px;
+				padding: 0 30px;
+				background-color: tomato;
+				color: white;
+				font-size: 24px;
+				border: none;
+				cursor: pointer;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(10, 1fr);
+				width: 100%;
+				background-color: brown;
+			}
+
+			.cell {
+				aspect-ratio: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid black;
+				background: sandybrown;
+			}
+
+			.bg-green {
+				background-color: greenyellow;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div class="container">
+				<div id="counter">0</div>
+				<div>
+					<button id="incrementa">+1</button>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="container">
+				<div class="grid"></div>
+			</div>
+		</section>
+
+		<script src="./js/app.js"></script>
+	</body>
+</html>
