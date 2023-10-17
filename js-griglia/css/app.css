@@ -29,6 +29,15 @@
 	align-items: center;
 }
 
-.bg-green {
-	background-color: chartreuse;
+.bg-blue {
+	background-color: cornflowerblue;
+}
+
+.bg-red {
+	background-color: tomato;
+}
+
+.cell.bg-blue,
+.cell.bg-red {
+	/* pointer-events: none; */
 }

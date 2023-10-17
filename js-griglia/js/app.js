@@ -6,15 +6,25 @@ console.log(gridElement)
 const playBtnElement = document.getElementById('play-btn')
 console.log(playBtnElement)
 
+const scoreDOMElement = document.getElementById('score')
+console.log(scoreDOMElement)
+
+let score = 0
+let bombe = []
+let numberOfCells = 100
+let numberOfBombs = 16
+let maxScore = numberOfCells - numberOfBombs
+
 playBtnElement.addEventListener('click', function () {
 	// svuota la griglia dalle celle generate in precedenza
 	gridElement.innerHTML = ''
+	score = 0
 
-	const bombe = getArrayOfRandomIntBetween(1, 100, 16)
+	bombe = getArrayOfRandomIntBetween(1, numberOfCells, numberOfBombs)
 	console.log(bombe)
 
 	// generare 100 nuove caselle da inserire nella
-	for (let i = 0; i < 100; i++) {
+	for (let i = 0; i < numberOfCells; i++) {
 		const n = i + 1
 		// console.log(n)
 
@@ -34,23 +44,58 @@ playBtnElement.addEventListener('click', function () {
 		// console.log(currentCellElement)
 
 		// ad ogni casella aggiungo l'event listener
-		currentCellElement.addEventListener('click', function () {
-			console.log(currentCellElement.classList.contains('bg-green'))
-
-			currentCellElement.classList.add('bg-green')
-			// prendo il numero della casella
-
-			// - SE il numero della casella è presente nell'array di bombe
-			// - aggiungialo la classe bg-red
-			// - game over
-			// - ALTRIMENTI
-			// - incrementiamo il punteggio
-			// - aggiungo la classe bg-blue
-			// - SE utente ha vinto
-			// - stampiamo hai vinto con il punteggio
-		})
+		currentCellElement.addEventListener('click', onClick, { once: true })
 	}
 })
+
+function onClick(event) {
+	console.log(event)
+	const currentCellElement = this
+	const cellNumber = parseInt(currentCellElement.innerHTML)
+	console.log(cellNumber, bombe)
+
+	let className = 'bg-blue'
+
+	// - SE il numero della casella è presente nell'array di bombe
+	if (bombe.includes(cellNumber)) {
+		// console.log('ho trovato una bomba')
+		className = 'bg-red'
+		// game over
+
+		gameOver()
+	} else {
+		// console.log('sono salvo')
+		score++
+		console.log('punteggio: ' + score, maxScore)
+		scoreDOMElement.innerHTML = score
+
+		if (score === maxScore) {
+			alert('you win')
+		}
+	}
+
+	currentCellElement.classList.add(className)
+
+	// rimuovo l'event listener
+	// currentCellElement.removeEventListener('click', onClick)
+}
+
+function gameOver() {
+	alert('Game over')
+	// recuperare tutte le caselle dal dom
+	// per ogni cella della griglia
+	// togliere event listener
+	// SE è una bomba
+	// aggiungi classe bg-red
+}
+
+function isBomb(number, bombs) {
+	if (bombs.includes(number)) {
+		return true
+	}
+
+	return false
+}
 
 function getArrayOfRandomIntBetween(minRange, maxRange, number) {
 	const bombsArray = []
