@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<style>
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+			}
+
+			section {
+				padding: 80px 0;
+			}
+
+			.team-members {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 40px;
+			}
+
+			img {
+				max-width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div class="container">
+				<h2>Our Team</h2>
+			</div>
+			<div class="container">
+				<div class="team-members"></div>
+			</div>
+		</section>
+
+		<script src="./js/app.js"></script>
+	</body>
+</html>
