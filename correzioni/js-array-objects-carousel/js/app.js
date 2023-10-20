@@ -36,11 +36,16 @@ const slidesWrapperEl = document.querySelector('.slides-wrapper')
 const thumbnailsEl = document.querySelector('.thumbnails')
 
 for (let i = 0; i < images.length; i++) {
-	const slide = images[i]
+	const slideA = images[i]
+	// const slideB = images[i+1]
 
-	const image = slide.image
-	const title = slide.title
-	const text = slide.text
+	// const image = slide.image
+	// const title = slide.title
+	// const text = slide.text
+
+	// destrutturazione di un oggetto
+	const { image: src, title, text } = slideA
+	// const { image: imageB, title: titleB, text: textB } = slideB
 
 	let className = 'slide'
 
@@ -50,7 +55,7 @@ for (let i = 0; i < images.length; i++) {
 
 	const htmlSlide = `
   <div class="${className}">
-    <img class="slide__img" src="${image}" alt="" />
+    <img class="slide__img" src="${src}" alt="" />
     <div class="slide__content">
       <h3>${title}</h3>
       <p>${text}</p>
@@ -58,7 +63,7 @@ for (let i = 0; i < images.length; i++) {
   </div>
   `
 
-	const htmlThumb = `<img class="thumbnails__item" data-index="${i}" src="${image}" alt="" />`
+	const htmlThumb = `<img class="thumbnails__item" data-index="${i}" src="${src}" alt="" />`
 
 	slidesWrapperEl.innerHTML += htmlSlide
 	thumbnailsEl.innerHTML += htmlThumb

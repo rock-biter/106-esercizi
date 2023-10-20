@@ -228,6 +228,6 @@ const filteredMembers = teamMembers
 			return false
 		}
 	})
-	.map((member) => `${member.name} ${member.lastName}`)
+	.map(({ name, lastName }) => `${name} ${lastName}`)
 
 console.log(filteredMembers)
