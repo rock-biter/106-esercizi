@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section {
+	padding: 80px 40px;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.card__header {
+	font-size: 32px;
+	padding: 12px 24px;
+	background-color: #e1e1e1;
+}
+
+.card__body {
+	padding: 12px 24px;
+}
+
+.task-item {
+	list-style: none;
+	font-size: 18px;
+	line-height: 1.75em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.task-item.done .task-text {
+	text-decoration: line-through;
+}
