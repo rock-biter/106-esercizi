@@ -9,7 +9,9 @@ createApp({
 	data() {
 		return {
 			userName: 'Gian',
-			currentIndex: 6,
+			currentIndex: 0,
+			inputMessage: '',
+			inputSearch: '',
 			dateFormat: 'dd/LL/yyyy ',
 			contacts: [
 				{
@@ -176,5 +178,47 @@ createApp({
 			],
 		}
 	},
-	methods: {},
+	methods: {
+		setCurrentIndex(i) {
+			this.currentIndex = i
+		},
+		sendMessage() {
+			console.log('send', this.inputMessage)
+
+			const newMessage = {
+				date: this.getDate(),
+				message: this.inputMessage,
+				status: 'sent',
+			}
+			console.log(newMessage)
+
+			const activeChat = this.contacts[this.currentIndex].messages
+
+			activeChat.push(newMessage)
+
+			this.inputMessage = ''
+
+			setTimeout(() => {
+				// console.log(this)
+
+				const replyMessage = {
+					date: this.getDate(),
+					message: 'Ok!',
+					status: 'received',
+				}
+
+				activeChat.push(replyMessage)
+			}, 2000)
+		},
+		getDate() {
+			const now = new Date()
+
+			const y = now.getFullYear()
+			const m = now.getMonth() + 1
+			const d = now.getDate()
+
+			// console.log(y, m, d)
+			return `${d}/${m}/${y} 15:25:00`
+		},
+	},
 }).mount('#app')

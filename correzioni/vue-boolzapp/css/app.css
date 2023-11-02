@@ -204,3 +204,7 @@ img {
 	height: 35px;
 	padding: 0 14px;
 }
+
+.hidden {
+	display: none;
+}

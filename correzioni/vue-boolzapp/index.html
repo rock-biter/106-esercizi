@@ -62,7 +62,11 @@
 							<span class="group-icon">
 								<i class="fa-solid fa-magnifying-glass"></i>
 							</span>
-							<input type="text" placeholder="Cerca o inizia una nuova chat" />
+							<input
+								v-model.trim="inputSearch"
+								type="text"
+								placeholder="Cerca o inizia una nuova chat"
+							/>
 						</div>
 					</div>
 
@@ -71,8 +75,10 @@
 							v-for="(contact,i) in contacts"
 							:key="i"
 							class="contacts__item"
+							@click="setCurrentIndex(i)"
 							:class="{
-              'active': i === currentIndex
+              'active': i === currentIndex,
+							'hidden': contact.name.toLowerCase().includes(inputSearch.toLowerCase()) === false
             }"
 						>
 							<div class="contact">
@@ -92,7 +98,7 @@
 					<div class="toolbar">
 						<div class="contact">
 							<figure class="avatar">
-								<img src="./img/avatar_2.jpg" alt="" />
+								<img :src="contacts[currentIndex].avatar" alt="" />
 							</figure>
 							<div class="contact__info">
 								<h4 class="cantact__name">{{ contacts[currentIndex].name }}</h4>
@@ -114,12 +120,17 @@
 					</div>
 
 					<ul class="chat">
-						<li class="message sent">Lorem ipsum dolor sit amet.</li>
-						<li class="message received">Lorem, ipsum dolor.</li>
+						<li
+							v-for="(message,i) in contacts[currentIndex].messages"
+							:class="['message',message.status]"
+						>
+							{{message.message}}
+						</li>
+						<!-- <li class="message received">Lorem, ipsum dolor.</li>
 						<li class="message sent">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
 							alias deserunt in.
-						</li>
+						</li> -->
 					</ul>
 
 					<div class="toolbar toolbar--chat">
@@ -130,6 +141,8 @@
 						<input
 							class="chat-input"
 							type="text"
+							v-model.trim="inputMessage"
+							@keyup.enter="sendMessage"
 							placeholder="Scrivi messaggio"
 						/>
 
