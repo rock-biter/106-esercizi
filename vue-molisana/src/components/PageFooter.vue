@@ -1,8 +1,62 @@
 <script>
+import FooterMenu from './FooterMenu.vue';
+
 export default {
+  components: {
+    FooterMenu
+  },
   data() {
     return {
-      title: 'Footer'
+      footerMenu1: {
+        title: 'Il pastificio bello',
+        links: [
+          {
+            text: 'Il pastificio',
+            href: '#'
+          },
+          {
+            text: 'Grano',
+            href: '#'
+          },
+          {
+            text: 'Filiera',
+            href: '#'
+          },
+          {
+            text: '100 anni di pasta',
+            href: '#'
+          },
+          {
+            text: 'Sartoria della pasta',
+            href: '#'
+          },
+        ]
+      },
+      footerMenu2: {
+        title: 'Le paste',
+        links: [
+          {
+            text: 'Le classiche',
+            href: '#'
+          },
+          {
+            text: 'Le spseciali',
+            href: '#'
+          },
+          {
+            text: 'Le integrali',
+            href: '#'
+          },
+          {
+            text: 'Le biologiche',
+            href: '#'
+          },
+          {
+            text: 'Le gluten-free',
+            href: '#'
+          },
+        ]
+      }
     }
   }
 }
@@ -15,26 +69,8 @@ export default {
         <div class="col">
           <img src="/img/la-molisana-logo.png" alt="">
         </div>
-        <div class="col">
-          <h4>Pastificio</h4>
-          <ul>
-            <li><a href="#">il pastificio</a></li>
-            <li><a href="#">il pastificio</a></li>
-            <li><a href="#">il pastificio</a></li>
-            <li><a href="#">il pastificio</a></li>
-            <li><a href="#">il pastificio</a></li>
-          </ul>
-        </div>
-        <div class="col">
-            <h4>Prodotti</h4>
-            <ul>
-              <li><a href="#">Le classiche</a></li>
-              <li><a href="#">il pastificio</a></li>
-              <li><a href="#">il pastificio</a></li>
-              <li><a href="#">il pastificio</a></li>
-              <li><a href="#">il pastificio</a></li>
-            </ul>
-        </div>
+        <FooterMenu class="col" :title="footerMenu1.title" :links="footerMenu1.links" />
+        <FooterMenu class="col" :title="footerMenu2.title" :links="footerMenu2.links"/>
       </div>
     </div>
   </footer>

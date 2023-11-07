@@ -3,7 +3,32 @@ export default {
   data() {
     return {
       title: 'Molisana',
-      menu: []
+      menu: [
+        {
+          text: 'Home',
+          href: '#',
+          icon: 'fa-solid fa-user'
+        },
+        {
+          text: 'Prodotti',
+          href: '#',
+          active: true,
+          icon: 'fa-solid fa-cart-shopping'
+        },
+        {
+          text: 'Chi siamo',
+          href: '#',
+          icon: 'fa-solid fa-heart'
+        },
+        {
+          text: 'shop',
+          href: '#'
+        },
+        {
+          text: 'Contatti',
+          href: '#'
+        }
+      ]
     }
   }
 }
@@ -15,14 +40,14 @@ export default {
     <nav class="container">
       <img src="/img/la-molisana-logo.png" alt="">
       <ul class="menu">
-        <li>
-          <a href="#">Home</a></li>
-        <li>
-          <a class="active" href="#">Prodotti</a></li>
-        <li>
-          <a href="#">Chi siamo</a></li>
-        <li>
-          <a href="#">Contatti</a></li>
+        <li class="menu-item" v-for="(link,i) in menu" :key="i">
+          <a :class="{
+            'active': link.active
+          }" :href="link.href">{{ link.text }}
+          <font-awesome-icon v-if="link.icon" :icon="link.icon" bounce size="2xs" />  
+        </a>
+          
+        </li>
       </ul>
     </nav>
   </header>
@@ -40,6 +65,10 @@ export default {
 .menu {
   display: flex;
   justify-content: center;
+
+  .menu-item:hover {
+    color: white;
+  }
 
   a {
     line-height: 48px;

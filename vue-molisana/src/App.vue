@@ -3,6 +3,7 @@
 import PageHeader from './components/PageHeader.vue';
 import PageFooter from './components/PageFooter.vue';
 import Product from './components/Product.vue';
+import pasteJson from './la-molisana.json'
 
 export default {
   components: {
@@ -12,8 +13,12 @@ export default {
   },
   data() {
     return {
-      message: 'Hello world!'
+      message: 'Hello world!',
+      paste: pasteJson
     }
+  },
+  created() {
+    console.log(this.paste)
   }
 }
 
@@ -25,8 +30,11 @@ export default {
   <main class="page-content">
     <div class="container">
       <div class="row">
-        <div v-for="n in 12" :key="n" class="col-3">
-          <Product />
+        <div 
+          v-for="(pasta,i) in paste" 
+          :key="i" 
+          class="col-3">
+          <Product :item="pasta" />
         </div>
       </div>
     </div>
