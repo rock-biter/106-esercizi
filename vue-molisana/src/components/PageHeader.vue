@@ -1,7 +1,14 @@
 <script>
+import Nav from './Nav.vue';
+import { store } from '../store'
+
 export default {
+  components: {
+    Nav
+  },
   data() {
     return {
+      store: store,
       title: 'Molisana',
       menu: [
         {
@@ -39,16 +46,8 @@ export default {
   <header class="page-header">
     <nav class="container">
       <img src="/img/la-molisana-logo.png" alt="">
-      <ul class="menu">
-        <li class="menu-item" v-for="(link,i) in menu" :key="i">
-          <a :class="{
-            'active': link.active
-          }" :href="link.href">{{ link.text }}
-          <font-awesome-icon v-if="link.icon" :icon="link.icon" bounce size="2xs" />  
-        </a>
-          
-        </li>
-      </ul>
+      <Nav :menu="menu"></Nav>
+      <input type="text" v-model="store.message">
     </nav>
   </header>
 </template>
@@ -62,28 +61,7 @@ export default {
   text-align: center;
 }
 
-.menu {
-  display: flex;
-  justify-content: center;
 
-  .menu-item:hover {
-    color: white;
-  }
-
-  a {
-    line-height: 48px;
-    display: block;
-    padding: 0 24px;
-
-    &.active,
-    &:hover {
-      background-color: $main-color;
-    }
-    
-  }
-  
-
-}
 
 .container {
   max-width: 900px;

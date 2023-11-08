@@ -2,23 +2,33 @@
 // 1) importazione del componente
 import PageHeader from './components/PageHeader.vue';
 import PageFooter from './components/PageFooter.vue';
-import Product from './components/Product.vue';
-import pasteJson from './la-molisana.json'
+import PageMain from './components/Main.vue';
+import axios from 'axios'
+import { store } from './store'
 
 export default {
   components: {
     PageHeader: PageHeader, //2) registrazione del componente
     PageFooter,
-    Product,
+    PageMain,
   },
   data() {
     return {
+      store: store,
       message: 'Hello world!',
-      paste: pasteJson
     }
   },
   created() {
-    console.log(this.paste)
+    // console.log(this.paste)
+    axios.get('http://localhost:3000/paste')
+    .then(res => {
+      
+      const paste = res.data
+      console.log(res,paste)
+      // this.store.paste = paste
+      this.store.paste = paste
+
+    })
   }
 }
 
@@ -26,19 +36,8 @@ export default {
 
 <template>
   <!-- 3) utilizzo del componente -->
-  <PageHeader />
-  <main class="page-content">
-    <div class="container">
-      <div class="row">
-        <div 
-          v-for="(pasta,i) in paste" 
-          :key="i" 
-          class="col-3">
-          <Product :item="pasta" />
-        </div>
-      </div>
-    </div>
-  </main>
+  <PageHeader/>
+  <PageMain/>
   <PageFooter />
 </template>
 

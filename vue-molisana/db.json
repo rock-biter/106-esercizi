@@ -1,4 +1,5 @@
-[
+{
+	"paste": [
   {
 	"src": "https://www.lamolisana.it/wp-content/uploads/2021/04/1-spaghetto-quadrato.jpg",
 	"titolo": "N.4 Spaghetto Quadrato Bucato",
@@ -71,4 +72,15 @@
 	"tipo": "cortissima",
 	"cottura": 12
   }
+],
+"products": [
+	{
+		"name": "Maglia bellissima",
+		"price": 12.99
+	},
+	{
+		"name": "Pantaloni strappati ma fighi",
+		"price": 24.99
+	}
 ]
+}

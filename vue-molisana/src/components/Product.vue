@@ -1,8 +1,8 @@
 <template>
   <div class="pasta">
-    <img @click="onClick" :src="item.src" alt="">
+    <img :src="item.src" alt="">
 
-    <h3>{{ item.titolo }}</h3>
+    <h3 @click="onClick" class="title">{{ item.titolo }}</h3>
     <p>{{ item.cottura }} min</p>
   </div>
   
@@ -40,5 +40,10 @@
   background-color: white;
   text-align: center;
   height: 100%;
+  border-radius: 8px;
+
+  .title {
+    margin-bottom: 8px;
+  }
 }
 </style>

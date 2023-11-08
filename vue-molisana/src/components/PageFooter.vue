@@ -1,5 +1,6 @@
 <script>
 import FooterMenu from './FooterMenu.vue';
+import { store } from '../store'
 
 export default {
   components: {
@@ -7,6 +8,7 @@ export default {
   },
   data() {
     return {
+      store: store,
       footerMenu1: {
         title: 'Il pastificio bello',
         links: [
@@ -66,6 +68,9 @@ export default {
   <footer class="page-footer">
     <div class="container">
       <div class="row">
+        <div class="col">
+          {{ store.message }}
+        </div>
         <div class="col">
           <img src="/img/la-molisana-logo.png" alt="">
         </div>
