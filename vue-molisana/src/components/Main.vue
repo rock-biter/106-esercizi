@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div 
-          v-for="(pasta, i) in pasteFn()" 
+          v-for="(pasta, i) in store.paste" 
           :key="i" 
           class="col-3">
           <Product @delete="deleteProduct" @show="showModal" :item="pasta" />
