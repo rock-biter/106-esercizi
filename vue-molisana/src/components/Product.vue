@@ -1,9 +1,9 @@
 <template>
   <div class="pasta">
-    <img :src="item.src" alt="">
+    <img :src="src" alt="">
 
-    <h3 @click="onClick" class="title">{{ item.titolo }}</h3>
-    <p>{{ item.cottura }} min</p>
+    <h3 @click="$emit('show',item)" class="title">{{ title }}</h3>
+    <p @click="onClick">{{ cottura }}</p>
   </div>
   
 </template>
@@ -25,12 +25,30 @@
       //   required: true
       // }
     },
+    computed: {
+      title() {
+        return this.item.titolo
+      },  
+      cottura() {
+        return `${this.item.cottura} min`
+      },
+      src() {
+        return this.item.src
+      }
+    },
     methods: {
       onClick() {
-        console.log(this.item.titolo)
+        // console.log(this.item.titolo)
         // this.item = {} NON POSSIAMO FARLO
+        console.log(this.cottura, this.getTitle() )
+      },
+      getTitle() {
+        return this.item.titolo
       }
-    }
+    },
+    // created() {
+    //   console.log(this)
+    // }
   }
 </script>
 

@@ -14,6 +14,8 @@ import {
 	faUser,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faHeart, faCartShopping, faUser)
+import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
+
+library.add(faHeart, faCartShopping, faUser, faCircleXmark)
 
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
