@@ -1,30 +1,71 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      counter: 0,
+      API_KEY: 'e99307154c6dfb0b4750f6603256716d',
+      query: 'Ritornoalfuturo'
+    }
+  },
+  methods: {
+    fetchMovies() {
+      // axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${this.query}&language=it_IT`)
+      // .then(res => {
+      //   console.log(res.data.results)
+      // })
+      axios.get('https://api.themoviedb.org/3/search/movie',{
+        params: {
+          api_key: this.API_KEY,
+          query: this.query,
+          language: 'it_IT'
+        }
+      }).then(res => {
+        console.log(res.data.results)
+      })
+    }
+  },
+  // beforeCreate() {
+  //   console.log('BEFORE CREATE',this.counter)
+  // },
+  created() {
+    console.log('CREATED')
+    this.fetchMovies()
+  },
+  // beforeMount() {
+  //   console.log('BEFORE MOUNT')
+  // },
+  // mounted() {
+  //   console.log('MOUNTED')
+  // },
+  // beforeUpdate() {
+  //   console.log('BEFORE UPDATE')
+  // },
+  // updated() {
+  //   console.log('UPDATED')
+  // },
+  // beforeUnmount() {
+  //   console.log('BEFORE UNMOUNT')
+  // },
+  // unmounted() {
+  //   console.log('UNMOUNTED')
+  // }
+}
+
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <div class="counter">
+      {{ counter }}
+    </div>
+    <button @click="counter++">incrementa</button>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.counter {
+  font-size: 5rem;
 }
 </style>
