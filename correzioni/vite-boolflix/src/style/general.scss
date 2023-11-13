@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+ul, ol, menu {
+  list-style: none;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
