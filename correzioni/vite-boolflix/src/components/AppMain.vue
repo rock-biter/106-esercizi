@@ -1,17 +1,32 @@
 <template>
   <main>
     <div class="container">
-      <h2>Movies</h2>
+      <template v-if="store.movies.length > 0">
+        <h2>Movies</h2>
 
-      <div class="grid">
-        <Card v-for="movie in store.movies" :key="movie.id" :item="movie"/>
-
-        <div v-if="!store.movies.length">
-          Nessun film da mostrare
+        <div class="grid">
+          <Card v-for="movie in store.movies" :key="movie.id" :item="movie"/>
         </div>
+      </template>
+      
+
+      <div v-if="!store.movies.length">
+        Nessun film da mostrare
       </div>
       
     </div>
+    <div class="container">
+        <h2>TV</h2>
+
+        <div class="grid">
+          <Card v-for="serie in store.series" :key="serie.id" :item="serie"/>
+
+          <div v-if="!store.series.length">
+            Nessuna serie TV da mostrare
+          </div>
+        </div>
+      
+      </div>
   </main>
 </template>
 
