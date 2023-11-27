@@ -1,0 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol,
+menu {
+	list-style: none;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+section {
+	padding: 20px;
+}
+
+.todos__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 4px 0;
+}
+
+.todos__item.done :first-child {
+	text-decoration: line-through;
+}
