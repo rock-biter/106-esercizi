@@ -16,5 +16,7 @@ $response = [
   'results' => $todos
 ];
 
+file_put_contents('./todos.json', json_encode($todos));
+
 header('Content-Type: application/json');
 echo json_encode($response);

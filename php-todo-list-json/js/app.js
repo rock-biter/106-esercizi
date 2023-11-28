@@ -44,6 +44,7 @@ createApp({
 				.then((res) => {
 					console.log(res.data)
 					this.todos = res.data.results
+					this.newTodo = ''
 				})
 		},
 		destroyTodo(index) {
@@ -51,11 +52,15 @@ createApp({
 				id: index,
 			}
 
-			axios.post('./destroy.php', data, {
-				headers: {
-					'Content-Type': 'multipart/form-data',
-				},
-			})
+			axios
+				.post('./destroy.php', data, {
+					headers: {
+						'Content-Type': 'multipart/form-data',
+					},
+				})
+				.then((res) => {
+					this.todos = res.data.results
+				})
 		},
 	},
 	created() {
