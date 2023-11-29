@@ -31,10 +31,3 @@ class Square
     return self::$edges;
   }
 }
-
-$sq1 = new Square(1);
-
-$edges = Square::$edges;
-var_dump($edges, Square::getEdges());
-
-// var_dump($sq1, $sq1->getArea(), $sq1->getPerimeter());
