@@ -1,0 +1,19 @@
+
+.main-header {
+
+  ul {
+    display: flex;
+    align-items: center;
+
+
+    li.active {
+      color: blue;
+    }
+
+    a {
+      display: block;
+      padding: 10px 24px;
+      color: currentColor;
+    }
+  }
+}
