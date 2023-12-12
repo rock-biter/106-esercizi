@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pacificdev/laravel_9_preset": "^1.1"
+    }
+}
