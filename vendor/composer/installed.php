@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'bcbff98ff601ec8f259ee9a4d074e9537fabdd97',
+        'reference' => '4182a2e9c36f343a3159d640f7abc56b4bac4d6d',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'bcbff98ff601ec8f259ee9a4d074e9537fabdd97',
+            'reference' => '4182a2e9c36f343a3159d640f7abc56b4bac4d6d',
             'dev_requirement' => false,
         ),
         'pacificdev/laravel_9_preset' => array(
