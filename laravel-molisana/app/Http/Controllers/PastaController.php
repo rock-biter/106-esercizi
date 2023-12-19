@@ -39,6 +39,43 @@ class PastaController extends Controller
     {
         $data = $request->all();
 
-        dd($data);
+        // Validazion dei dati che arrivano dagli utenti brutti e puzzoni
+
+        // dd($data);
+        // $new_pasta = new Pasta();
+        // $new_pasta->title = $data['title'];
+        // $new_pasta->type = $data['type'];
+        // $new_pasta->image = $data['image'];
+        // $new_pasta->cooking_time = $data['cooking_time'];
+        // $new_pasta->weight = $data['weight'];
+        // $new_pasta->description = $data['description'];
+
+        // $new_pasta->save();
+        $new_pasta = Pasta::create($data);
+
+        return redirect()->route('pastas.show', $new_pasta);
+    }
+
+    public function edit(Pasta $pasta)
+    {
+        return view('pastas.edit', compact('pasta'));
+    }
+
+    public function update(Request $request, Pasta $pasta)
+    {
+        $data = $request->all();
+
+        $pasta->update($data);
+        // $pasta->fill($data); //non salva i dati come update
+
+        // $pasta->title = $data['title'];
+        // $pasta->type = $data['type'];
+        // $pasta->weight = $data['weight'];
+        // ...
+        // $pasta->save();
+
+        // dd($data, $pasta);
+        return redirect()->route('pastas.show', $pasta);
+        // return back(); 
     }
 }

@@ -33,3 +33,9 @@ Route::get('/pastas/{pasta}', [PastaController::class, 'show'])
 
 Route::post('/pastas', [PastaController::class, 'store'])
     ->name('pastas.store');
+
+Route::get('/pastas/{pasta}/edit', [PastaController::class, 'edit'])
+    ->name('pastas.edit');
+
+Route::put('/pastas/{pasta}', [PastaController::class, 'update'])
+    ->name('pastas.update');

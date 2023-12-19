@@ -34,7 +34,7 @@
                 <td>{{ $pasta->cooking_time }}</td>
                 <td>{{ $pasta->weight }}</td>
                 <td>
-                  <span>edit</span>
+                  <a href="{{ route('pastas.edit',$pasta) }}" class="btn btn-secondary btn-sm">edit</a>
                   <span>delete</span>
                 </td>
               </tr>
