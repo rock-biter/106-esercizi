@@ -6,6 +6,7 @@ use App\Http\Requests\StorePastaRequest;
 use App\Http\Requests\UpdatePastaRequest;
 use App\Models\Pasta;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PastaController extends Controller
 {
@@ -35,9 +36,23 @@ class PastaController extends Controller
         return view('pastas.create');
     }
 
-    public function store(Request $request)
+    public function store(StorePastaRequest $request) //al posto della classe Request
     {
-        $data = $request->all();
+        // $request->validate([
+        //     'title' => 'required|max:100|min:5',
+        //     'type' => [
+        //         'required',
+        //         'max:50',
+        //         // 'in:lunga,corta,cortissima,brodo'
+        //         Rule::in(['lunga', 'corta', 'cortissima', 'brodo'])
+        //     ],
+        //     // 'image' => 'required|max:255|url',
+        //     'image' => ['required', 'max:255', 'url'],
+        //     'cooking_time' => 'required|max:20|min:4',
+        //     'weight' => 'required|max:20|min:3',
+        //     'description' => 'nullable|min:5'
+        // ]);
+        $data = $request->validated();
 
         // Validazion dei dati che arrivano dagli utenti brutti e puzzoni
 
@@ -63,7 +78,22 @@ class PastaController extends Controller
 
     public function update(Request $request, Pasta $pasta)
     {
+        $request->validate([
+            'title' => 'required|max:100|min:5',
+            'type' => [
+                'required',
+                'max:50',
+                // 'in:lunga,corta,cortissima,brodo'
+                Rule::in(['lunga', 'corta', 'cortissima', 'brodo'])
+            ],
+            // 'image' => 'required|max:255|url',
+            'image' => ['required', 'max:255', 'url'],
+            'cooking_time' => 'required|max:20|min:4',
+            'weight' => 'required|max:20|min:3',
+            'description' => 'nullable|min:5'
+        ]);
         $data = $request->all();
+
 
         $pasta->update($data);
         // $pasta->fill($data); //non salva i dati come update
@@ -77,5 +107,12 @@ class PastaController extends Controller
         // dd($data, $pasta);
         return redirect()->route('pastas.show', $pasta);
         // return back(); 
+    }
+
+    public function destroy(Pasta $pasta)
+    {
+        $pasta->delete();
+
+        return redirect()->route('pastas.index');
     }
 }

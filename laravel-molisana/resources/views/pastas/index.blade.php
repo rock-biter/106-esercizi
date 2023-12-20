@@ -13,6 +13,7 @@
             <th>Tipo</th>
             <th>Cottura</th>
             <th>Peso</th>
+            <th></th>
             <th>
               <a href="{{ route('pastas.create') }}" class="btn btn-sm btn-primary">Nuova pasta </a>
             </th>
@@ -35,7 +36,13 @@
                 <td>{{ $pasta->weight }}</td>
                 <td>
                   <a href="{{ route('pastas.edit',$pasta) }}" class="btn btn-secondary btn-sm">edit</a>
-                  <span>delete</span>
+                </td>
+                <td>
+                  <form id="form-{{ $pasta->id }}" action="{{ route('pastas.destroy',$pasta) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input data-confirm data-target="form-{{ $pasta->id }}" class="btn btn-danger btn-sm" type="submit" value="Delete">
+                  </form>
                 </td>
               </tr>
           @empty

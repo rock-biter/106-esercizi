@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StorePastaRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StorePastaRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,18 @@ class StorePastaRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:100|min:5',
+            'type' => [
+                'required',
+                'max:50',
+                // 'in:lunga,corta,cortissima,brodo'
+                Rule::in(['lunga', 'corta', 'cortissima', 'brodo'])
+            ],
+            // 'image' => 'required|max:255|url',
+            'image' => ['required', 'max:255', 'url'],
+            'cooking_time' => 'required|max:20|min:4',
+            'weight' => 'required|max:20|min:3',
+            'description' => 'nullable|min:5'
         ];
     }
 }
