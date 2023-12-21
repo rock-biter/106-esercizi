@@ -1,5 +1,8 @@
 {
     "require": {
         "pacificdev/laravel_9_preset": "^1.1"
+    },
+    "require-dev": {
+        "laravel/breeze": "^1.19"
     }
 }
