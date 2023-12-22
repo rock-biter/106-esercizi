@@ -11,11 +11,24 @@
         <table class="table table-stripped">
           <thead>
             <tr>
+              <td></td>
+              <td>
+                <form action="{{ route('admin.posts.index') }}" method="GET">
+                  <input placeholder="filtra per titolo" class="form-control" type="text" name="title" value="{{ request()->get('title') }}">
+                </form>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
               <th>ID</th>
               <th>Title</th>
               <th>Slug</th>
               <th></th>
-              <th></th>
+              <th>
+                <a class="btn btn-primary btn-sm" href="{{ route('admin.posts.create') }}">Nuovo</a>
+              </th>
             </tr>
           </thead>
           <tbody>
