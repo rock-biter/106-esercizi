@@ -21,6 +21,17 @@
           <label for="slug" class="form-label">Slug</label>
           <input type="text" readonly required class="form-control" name="slug" id="slug" placeholder="Titolo del post" value="{{ old('slug',$post->slug) }}">
         </div>
+
+        <div class="mb-3">
+          <label for="category_id" class="form-label">Categories</label>
+          <select name="category_id" class="form-control" id="category_id">
+            <option>Seleziona una categoria</option>
+            @foreach($categories as $category)
+              <option @selected( old('category_id', optional($post->category)->id ) == $category->id ) value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+          </select>
+        </div>
+
         <div class="mb-3">
           <label for="content"  class="form-label">Post content</label>
           <textarea class="form-control" id="content" name="content" rows="3">{{ old('content',$post->content) }}</textarea>

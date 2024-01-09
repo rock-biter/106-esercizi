@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,15 +21,17 @@ class PostController extends Controller
     {
         $data = $request->all();
 
-        $query = DB::table('posts');
+        $query = Post::limit(20);
 
         if (isset($data['title'])) {
-            $query = $query->where('title', 'like', "%{$data['title']}%");
+            $query = $query->where('title', 'like', "%{$data['title']}%")->limit(20);
         }
 
         // aggiungere altri filtri se li abbiamo
 
-        $posts = $query->paginate(20);
+        $posts = $query->get();
+
+        // dd($posts);
 
         return view('admin.posts.index', compact('posts'));
     }
@@ -40,7 +43,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::orderBy('name', 'ASC')->get();
+
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -51,9 +56,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request->all());
+
         $request->validate([
             'title' => 'required|max:255|string|unique:posts',
-            'content' => 'nullable|min:5|string'
+            'content' => 'nullable|min:5|string',
+            'category_id' => 'nullable|exists:categories,id'
         ]);
 
         $data = $request->all();
@@ -83,7 +92,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::orderBy('name', 'ASC')->get();
+
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -97,7 +108,8 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => ['required', 'max:255', 'string', Rule::unique('posts')->ignore($post->id)],
-            'content' => 'nullable|min:5|string'
+            'content' => 'nullable|min:5|string',
+            'category_id' => 'nullable|exists:categories,id'
         ]);
 
         $data = $request->all();

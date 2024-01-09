@@ -4,6 +4,14 @@
     <section>
       <div class="container">
         <h1>{{ $post->title }}</h1>
+        @if($post->category)
+        <p>
+          <strong>
+          {{ $post->category->name }}
+          </strong>
+        </p>
+        @endif
+        {{-- @dump($post->category()) --}}
         <p>{{ $post->slug }}</p>
         <p>{{ $post->created_at->format('d/m/Y') }}</p>
       </div>

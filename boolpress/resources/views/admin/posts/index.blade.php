@@ -25,6 +25,7 @@
               <th>ID</th>
               <th>Title</th>
               <th>Slug</th>
+              <th>Category</th>
               <th></th>
               <th>
                 <a class="btn btn-primary btn-sm" href="{{ route('admin.posts.create') }}">Nuovo</a>
@@ -41,6 +42,10 @@
                   </a>
                   </td>
                   <td>{{ $post->slug }}</td>
+                  <td>
+                    {{ isset($post->category) ?  $post->category->name : '-' }}
+                    {{-- {{ optional($post->category)->name  }} --}}
+                  </td>
                   <td>
                     <a href="{{ route('admin.posts.edit',$post) }}">edit</a>
                   </td>

@@ -14,8 +14,21 @@
 
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
-          <input type="text" required class="form-control" name="title" id="title" placeholder="Titolo del post" value="{{ old('title') }}">
+          <input type="text" class="form-control" name="title" id="title" placeholder="Titolo del post" value="{{ old('title') }}">
         </div>
+
+        {{-- @dump($categories) --}}
+
+        <div class="mb-3">
+          <label for="category_id" class="form-label">Categories</label>
+          <select name="category_id" class="form-control" id="category_id">
+            <option>Seleziona una categoria</option>
+            @foreach($categories as $category)
+              <option @selected( old('category_id') == $category->id ) value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+          </select>
+        </div>
+
         <div class="mb-3">
           <label for="content"  class="form-label">Post content</label>
           <textarea class="form-control" id="content" name="content" rows="3">{{ old('content') }}</textarea>
