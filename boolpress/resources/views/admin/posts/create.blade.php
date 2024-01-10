@@ -22,11 +22,25 @@
         <div class="mb-3">
           <label for="category_id" class="form-label">Categories</label>
           <select name="category_id" class="form-control" id="category_id">
-            <option>Seleziona una categoria</option>
+            <option value="">Seleziona una categoria</option>
             @foreach($categories as $category)
               <option @selected( old('category_id') == $category->id ) value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
           </select>
+        </div>
+
+        <div class="form-group mb-3">
+          <p>Seleziona i tag:</p>
+          <div class="d-flex flex-wrap gap-4 ">
+            @foreach ($tags as $tag)
+              <div class="form-check">
+                <input name="tags[]" class="form-check-input" type="checkbox" value="{{$tag->id}}" id="tag-{{$tag->id}}" @checked( in_array($tag->id, old('tags',[]) ) ) >
+                <label class="form-check-label" for="tag-{{$tag->id}}">
+                  {{ $tag->name }}
+                </label>
+              </div>
+            @endforeach
+          </div>
         </div>
 
         <div class="mb-3">

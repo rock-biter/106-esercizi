@@ -4,6 +4,8 @@
     <section>
       <div class="container">
         <h1>{{ $post->title }}</h1>
+        {{-- @dump($post->category()) --}}
+        <p>{{ $post->slug }}</p>
         @if($post->category)
         <p>
           <strong>
@@ -11,8 +13,15 @@
           </strong>
         </p>
         @endif
-        {{-- @dump($post->category()) --}}
-        <p>{{ $post->slug }}</p>
+
+        <ul class="d-flex gap-2 ps-0">
+          @foreach ($post->tags as $tag)
+            <li class="badge rounded-pill text-bg-primary">{{ $tag->name }}</li>
+          @endforeach 
+        </ul>
+        
+          
+        
         <p>{{ $post->created_at->format('d/m/Y') }}</p>
       </div>
       <div class="container mb-3">
