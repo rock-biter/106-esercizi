@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -68,8 +69,13 @@ class PostController extends Controller
             'tags' => 'exists:tags,id'
         ]);
 
+
+
         $data = $request->all();
         $data['slug'] = Str::slug($data['title'], '-');
+
+        $user_id = Auth::id();
+        $data['user_id'] = $user_id;
 
         $post = Post::create($data);
 

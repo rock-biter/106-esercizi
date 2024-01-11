@@ -26,6 +26,7 @@
               <th>Title</th>
               <th>Slug</th>
               <th>Category</th>
+              <th>User</th>
               <th></th>
               <th>
                 <a class="btn btn-primary btn-sm" href="{{ route('admin.posts.create') }}">Nuovo</a>
@@ -47,7 +48,12 @@
                     {{-- {{ optional($post->category)->name  }} --}}
                   </td>
                   <td>
-                    <a href="{{ route('admin.posts.edit',$post) }}">edit</a>
+                    {{ $post->user->name }}
+                  </td>
+                  <td>
+                    @if(Auth::id() === $post->user_id)
+                      <a href="{{ route('admin.posts.edit',$post) }}">edit</a>
+                    @endif
                   </td>
                   <td>
                     <form action="{{ route('admin.posts.destroy',$post)}}" method="POST">
