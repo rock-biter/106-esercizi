@@ -8,7 +8,7 @@
     </section>
     <section>
       <div class="container">
-        <form action="{{ route('admin.posts.store') }}" method="POST">
+        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
       
         @csrf
 
@@ -18,6 +18,10 @@
         </div>
 
         {{-- @dump($categories) --}}
+        <div class="mb-3">
+          <label for="cover_image" class="form-label">Default file input example</label>
+          <input class="form-control" name="cover_image" type="file" id="cover_image">
+        </div>
 
         <div class="mb-3">
           <label for="category_id" class="form-label">Categories</label>
