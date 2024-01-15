@@ -3,6 +3,9 @@
 @section('content')
     <section>
       <div class="container">
+        @if($post->cover_image)
+          <img class="w-100" src="{{ asset('storage/' . $post->cover_image) }}">
+        @endif
         <h1>{{ $post->title }}</h1>
         {{-- @dump($post->category()) --}}
         <p>{{ $post->slug }}</p>

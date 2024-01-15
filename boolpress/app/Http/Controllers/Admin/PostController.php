@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -65,11 +66,20 @@ class PostController extends Controller
             'title' => 'required|max:255|string|unique:posts',
             'content' => 'nullable|min:5|string',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'exists:tags,id'
+            'tags' => 'exists:tags,id',
+            'cover_image' => 'nullable|file|max:2048'
         ]);
 
         $data = $request->all();
         $data['slug'] = Str::slug($data['title'], '-');
+
+        // salvare il file
+        if ($request->hasFile('cover_image')) {
+
+            $file_path = Storage::put('images', $request->cover_image);
+
+            $data['cover_image'] = $file_path;
+        }
 
         $post = Post::create($data);
 
@@ -118,7 +128,8 @@ class PostController extends Controller
             'title' => ['required', 'max:255', 'string', Rule::unique('posts')->ignore($post->id)],
             'content' => 'nullable|min:5|string',
             'category_id' => 'nullable|exists:categories,id',
-            'tags' => 'exists:tags,id'
+            'tags' => 'exists:tags,id',
+            'cover_image' => 'nullable|file|max:2048'
         ]);
 
         $data = $request->all();
@@ -126,7 +137,22 @@ class PostController extends Controller
 
         // if($post->title !== $data['title']) {
         $data['slug'] = Str::slug($data['title'], '-');
+
+
         // }
+
+        // salvare il file
+        if ($request->hasFile('cover_image')) {
+
+            $file_path = Storage::put('images', $request->cover_image);
+
+            $data['cover_image'] = $file_path;
+
+            // elimino il file precedente se sto salvando una nuova copertina
+            if ($post->cover_image) {
+                Storage::delete($post->cover_image);
+            }
+        }
 
         $post->update($data);
 

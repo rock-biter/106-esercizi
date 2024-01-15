@@ -13,7 +13,8 @@ class Post extends Model
         'title',
         'content',
         'slug',
-        'category_id'
+        'category_id',
+        'cover_image'
     ];
 
     public function category()
