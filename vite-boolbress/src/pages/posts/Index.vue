@@ -33,13 +33,19 @@ export default {
     fetchPosts() {
       axios.get(`${this.BASE_URL}/posts`)
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         this.posts = res.data.results.data
       })
     }
   },
   created() {
     this.fetchPosts()
+  },
+  mounted() {
+    console.log('posts.index montato')
+  },
+  unmounted() {
+    console.log('unmount posts.index')
   }
 }
 </script>

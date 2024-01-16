@@ -11,12 +11,22 @@ class PostController extends Controller
     public function index(Request $request)
     {
 
-        $results = Post::with('category', 'tags', 'category.posts')->paginate(20);
+        $results = Post::with('category', 'tags')->paginate(20);
         // $results = Post::all();
 
         return response()->json([
             'results' => $results,
             'success' => true
+        ]);
+    }
+
+    public function show(Post $post)
+    {
+        // $post = Post::with('category','tags')->where('slug',$slug)->first();
+        $post->load('category', 'tags');
+
+        return response()->json([
+            'post' => $post
         ]);
     }
 }

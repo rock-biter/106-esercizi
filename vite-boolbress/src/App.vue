@@ -1,15 +1,16 @@
 <script>
-  import PostIndex from './pages/posts/Index.vue';
+import AppHeader from './components/AppHeader.vue';
   export default {
     components: {
-      PostIndex
+      AppHeader
     }
 
   }
 </script>
 
 <template>
-  <PostIndex />
+  <AppHeader />
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
