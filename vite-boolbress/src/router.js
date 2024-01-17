@@ -5,6 +5,7 @@ import PostIndex from './pages/posts/Index.vue'
 import PostShow from './pages/posts/Show.vue'
 import Contact from './pages/Contact.vue'
 import NotFound from './pages/404.vue'
+import CategoryArchive from './pages/categories/Archive.vue'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -24,6 +25,12 @@ const router = createRouter({
 			name: 'posts.show',
 			props: true,
 			component: PostShow,
+		},
+		{
+			path: '/category/:slug',
+			name: 'categories.archive',
+			props: true,
+			component: CategoryArchive,
 		},
 		{
 			path: '/contatti',

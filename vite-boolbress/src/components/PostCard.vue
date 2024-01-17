@@ -1,7 +1,11 @@
 <template>
   <div class="card card-post">
     <h3>{{  post.title }}</h3>
-    <p v-if="post.category">{{  post.category.name }}</p>
+    <p v-if="post.category">
+      <router-link :to="{ name: 'categories.archive', params: { slug: post.category.slug }}" >
+        {{ post.category.name }}
+      </router-link>
+    </p>
     <router-link :to="{ name: 'posts.show', params: { slug: post.slug }}" >Leggi articolo...</router-link>
   </div>
 </template>

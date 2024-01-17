@@ -12,6 +12,13 @@
 
       </div>
     </div>
+    <div class="container">
+      <ul class="pagination">
+        <li v-for="n in lastPage" :class="{
+          'active': n === page
+        }" :key="n" @click="setPage(n)" >{{ n }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -26,16 +33,34 @@ export default {
   data() {
     return {
       posts: [],
+      page: 3,
+      lastPage: 0,
       BASE_URL: 'http://127.0.0.1:8000/api'
+    }
+  },
+  watch: {
+    page: function() {
+      this.posts = []
+      this.fetchPosts()
     }
   },
   methods: {
     fetchPosts() {
-      axios.get(`${this.BASE_URL}/posts`)
+      axios.get(`${this.BASE_URL}/posts`,{
+        params: {
+          page: this.page
+        }
+      })
       .then((res) => {
         // console.log(res)
         this.posts = res.data.results.data
+        this.lastPage = res.data.results.last_page
       })
+    },
+    setPage(n) {
+      this.page = n
+      // this.posts = []
+      // this.fetchPosts()
     }
   },
   created() {
@@ -55,5 +80,19 @@ export default {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(4,1fr);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+  padding: 20px;
+
+  .active {
+    color: cornflowerblue;
+    font-weight: 700;
+  }
 }
 </style>
