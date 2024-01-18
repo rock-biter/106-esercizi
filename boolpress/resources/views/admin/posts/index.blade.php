@@ -19,7 +19,13 @@
               </td>
               <td></td>
               <td></td>
-              <td></td>
+              <td>
+                @if(request()->has('trashed')) 
+                  <a href="{{ route('admin.posts.index') }}">Tutti i post</a>
+                @else
+                <a href="{{ route('admin.posts.index',[ 'trashed' => 1 ]) }}">Cestino ({{ $trashedElements }})</a>
+                @endif
+              </td>
             </tr>
             <tr>
               <th>ID</th>
@@ -56,11 +62,20 @@
                     @endif
                   </td>
                   <td>
+                    @if($post->trashed())
+                    <form action="{{ route('admin.posts.restore',$post) }}" method="POST">
+                      @csrf
+
+                      <input class="btn btn-success btn-sm" type="submit" value="restore">
+
+                    </form>
+                    @endif
+
                     <form action="{{ route('admin.posts.destroy',$post)}}" method="POST">
                       @csrf
                       @method('DELETE')
 
-                      <input class="btn btn-danger btn-sm" type="submit" value="delete">
+                      <input class="btn btn-danger btn-sm" type="submit" value="{{ $post->trashed() ? 'Elimina definitivamente' : 'elimina' }}">
                     </form>
                   </td>
 

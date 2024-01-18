@@ -26,6 +26,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin.')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('posts', PostController::class);
+    Route::post('/posts/{post}/restore', [PostController::class, 'restore'])->name('posts.restore');
 
     Route::resource('leads', LeadController::class)->only(['create', 'store']);
     // Route::get('/contatti', [LeadController::class, 'create'])->name('leads.create');

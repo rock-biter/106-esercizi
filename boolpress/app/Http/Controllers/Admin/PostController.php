@@ -24,7 +24,11 @@ class PostController extends Controller
     {
         $data = $request->all();
 
-        $query = Post::limit(20);
+        if ($request->has('trashed')) {
+            $query = Post::onlyTrashed()->limit(20);
+        } else {
+            $query = Post::limit(20);
+        }
 
         if (isset($data['title'])) {
             $query = $query->where('title', 'like', "%{$data['title']}%")->limit(20);
@@ -33,10 +37,11 @@ class PostController extends Controller
         // aggiungere altri filtri se li abbiamo
 
         $posts = $query->get();
+        $trashedElements = Post::onlyTrashed()->count();
 
         // dd($posts);
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'trashedElements'));
     }
 
     /**
@@ -177,10 +182,41 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function restore($post_id)
     {
+        $post = Post::withTrashed()->where('id', $post_id)->first();
+
+        if (!isset($post)) {
+            abort(404);
+        }
+
+        if ($post->trashed()) {
+            $post->restore();
+        }
+
+        return back();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($post_id)
+    {
+        $post = Post::withTrashed()->where('id', $post_id)->first();
+
+        if (!isset($post)) {
+            abort(404);
+        }
+
         $post->tags()->sync([]);
-        $post->delete();
+        if ($post->trashed()) {
+            $post->forceDelete();
+        } else {
+            $post->delete();
+        }
 
         return redirect()->route('admin.posts.index');
     }
