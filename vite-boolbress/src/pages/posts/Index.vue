@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <DefaultLayout>
     <div class="container">
       <h1>
         I nostri ultimi post
@@ -19,16 +19,18 @@
         }" :key="n" @click="setPage(n)" >{{ n }}</li>
       </ul>
     </div>
-  </div>
+  </DefaultLayout>
 </template>
 
 <script>
 import axios from 'axios';
 import PostCard from '../../components/PostCard.vue';
+import DefaultLayout from '../../layouts/DefaultLayout.vue';
 
 export default {
   components: {
-    PostCard
+    PostCard,
+    DefaultLayout
   },
   data() {
     return {

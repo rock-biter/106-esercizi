@@ -1,24 +1,65 @@
 <template>
-  <div v-if="post">
-    <div class="container">
-      <h1>{{  post.title }}</h1>
-      <p>{{ post.slug }}</p>
-      <p >{{ post.category?.name }}</p>
-      <ul class="tags">
-        <li v-for="tag in post.tags" :key="tag.id">
-          {{ tag.name }}
-        </li>
-      </ul>
-    </div>
+  <LeftSidebarLayout>
+    <template v-if="post">
 
-    <div class="container" v-html="post.content">
-    </div>
-  </div>
+      <Section>
+        <div class="col-12">
+          <h1>{{ post.title }}</h1>
+          <p>{{ post.slug }}</p>
+        </div>
+      </Section>
+
+      <Section class="bg-blue">
+        <div class="col-12">
+          <p >{{ post.category?.name }}</p>
+          <ul class="tags">
+            <li v-for="(tag, i) in post.tags" :key="tag.id">
+              <Badge>
+                <span @click="fetchPost" v-if="i % 2 === 0">({{ i }})</span>
+                <strong >
+                  {{ tag.name }} 
+                </strong>
+              </Badge>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12" v-html="post.content"></div>
+      </Section>
+
+      <Section>
+        <div class="col-12">
+          <h2>Articoli correlati</h2>
+        </div>
+        <div class="col-4" v-for="n in 3" :key="n">
+          <h4>Titolo articolo {{ n }}</h4>
+        </div>
+      </Section>
+    </template>
+
+    <template #sidebar>
+      <h4>Categorie</h4>
+      <ul class="categories">
+        <li>DevOps</li>
+        <li>Backend</li>
+        <li>FrontEnd</li>
+        <li>Design</li>
+      </ul>
+    </template>
+  </LeftSidebarLayout>
+  
 </template>
 
 <script>
 import axios from 'axios'
+import Badge from '../../components/Badge.vue'
+import Section from '../../components/Section.vue'
+import LeftSidebarLayout from '../../layouts/LeftSidebarLayout.vue'
 export default {
+  components: {
+    Badge,
+    Section,
+    LeftSidebarLayout
+  },
   props: {
     slug: String
   },
@@ -58,6 +99,12 @@ export default {
 .tags {
   padding: 10px 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
+}
+
+.bg-blue {
+  background: dodgerblue;
+  color: white;
 }
 </style>
