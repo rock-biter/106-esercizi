@@ -10,6 +10,9 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <PostCard class="card post-card" v-for="post in posts" :post="post" :key="post.id" />
 
+        <NewPostCard @finish="onFinish" title="Un bel post" slug="ciao-mamma-come-stai" />
+        <NewPostCardAPI @onMounted="onMounted" :post="{ title: 'Il mioglior modo di ...'}" slug="eccomi-sono-morto"/>
+
       </div>
     </div>
     <div class="container">
@@ -26,11 +29,15 @@
 import axios from 'axios';
 import PostCard from '../../components/PostCard.vue';
 import DefaultLayout from '../../layouts/DefaultLayout.vue';
+import NewPostCard from '../../components/NewPostCard.vue';
+import NewPostCardAPI from '../../components/NewPostCardAPI.vue';
 
 export default {
   components: {
     PostCard,
-    DefaultLayout
+    DefaultLayout,
+    NewPostCard,
+    NewPostCardAPI
   },
   data() {
     return {
@@ -47,6 +54,12 @@ export default {
     }
   },
   methods: {
+    onFinish() {
+      console.log('i dati sono arrivati')
+    },
+    onMounted(post) {
+      console.log('carp post mounted!',post)
+    },
     fetchPosts() {
       axios.get(`${this.BASE_URL}/posts`,{
         params: {
