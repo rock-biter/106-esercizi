@@ -18,11 +18,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  font-size: 64px;
-}
-
-.bg-yellow {
-  background-color: goldenrod;
-}
 </style>

@@ -50,9 +50,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.active {
-  color: tomato;
-  font-weight: 700;
-}
-
 </style>

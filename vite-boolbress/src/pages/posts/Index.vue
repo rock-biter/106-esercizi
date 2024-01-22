@@ -1,13 +1,13 @@
 <template>
   <DefaultLayout>
     <div class="container">
-      <h1>
+      <h1 class="mb-4">
         I nostri ultimi post
       </h1>
     </div>
 
     <div class="container">
-      <div class="grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         <PostCard class="card post-card" v-for="post in posts" :post="post" :key="post.id" />
 
       </div>
@@ -78,23 +78,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(4,1fr);
-}
 
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  list-style: none;
-  padding: 20px;
-
-  .active {
-    color: cornflowerblue;
-    font-weight: 700;
-  }
-}
 </style>

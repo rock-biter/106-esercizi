@@ -13,12 +13,12 @@ import AppHeader from './components/AppHeader.vue';
 </template>
 
 <style lang="scss">
-@use "./style/general.scss";
+// @use "./style/general.scss";
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+// .container {
+//   max-width: 1000px;
+//   margin: 0 auto;
+// }
 
 
 </style>

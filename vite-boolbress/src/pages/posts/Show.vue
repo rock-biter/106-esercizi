@@ -9,14 +9,14 @@
         </div>
       </Section>
 
-      <Section class="bg-blue">
+      <Section class=" md:py-5px mt-5px mr-5px">
         <div class="col-12">
           <p >{{ post.category?.name }}</p>
-          <ul class="tags">
-            <li v-for="(tag, i) in post.tags" :key="tag.id">
+          <ul class="tags pl-[7px] ">
+            <li class="hover:text-amber-500 odd:pl-6" v-for="(tag, i) in post.tags" :key="tag.id">
               <Badge>
                 <span @click="fetchPost" v-if="i % 2 === 0">({{ i }})</span>
-                <strong >
+                <strong class="3xl:text-9xl" >
                   {{ tag.name }} 
                 </strong>
               </Badge>
@@ -96,15 +96,4 @@ export default {
 
 <style lang="scss" scoped>
 
-.tags {
-  padding: 10px 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.bg-blue {
-  background: dodgerblue;
-  color: white;
-}
 </style>
